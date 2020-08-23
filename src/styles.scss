@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+/**
+ * COOPER Style by Jose Buelvas.
+ */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: rgb(255, 255, 255);
+  text-shadow: rgba(0, 0, 0, 0.004) 1px 1px 1px;
+  transition: all 0.35s ease 0s;
+}
+
+.layout-wrapper {
+  background-color: rgb(247, 247, 247);
+}
