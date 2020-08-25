@@ -1,0 +1,9 @@
+@import "cooper";
+
+// Material Buttons ====================================================================================================
+.mat-flat-button,
+.mat-raised-button {
+  &.mat-primary {
+    background-color: $color-primary;
+  }
+}

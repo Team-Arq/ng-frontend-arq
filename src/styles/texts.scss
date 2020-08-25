@@ -1,0 +1,54 @@
+@import "cooper";
+
+/**
+ * Text Families
+ */
+.text-sans-serif {
+  font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/**
+ * Text Colors
+ * <element class="text-$color">
+ */
+@each $key, $val in $for-color-classes {
+  .text-#{$key} {
+    color: $val;
+  }
+}
+
+/**
+ * Text Weights
+ * <element class="text-$weight">
+ */
+@each $key, $val in $for-text-weight {
+  .font-weight-#{$key} {
+    font-weight: $val;
+  }
+}
+
+/**
+ * Text Sizes
+ * <element class="fs-$heading">
+ */
+@each $key, $val in $for-text-sizes {
+  .fs-#{$key} {
+    font-size: $val;
+  }
+}
+
+/**
+ * Text Decorations
+ * <element class="text-decoration-$decoration">
+ */
+@each $key, $val in $for-text-decorations {
+  .text-decoration-#{$key} {
+    text-decoration: $val;
+  }
+}
+
+@each $key, $val in $for-heading-sizes {
+  .coop-#{$key} {
+    size: $val !important;
+  }
+}

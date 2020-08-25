@@ -1,0 +1,50 @@
+/**
+ * Colors for Cooper by Jose Buelvas
+ */
+
+// Colors ==============================================================================================================
+$color-primary: rgb(0, 214, 214);
+$color-primary-light: rgb(30, 221, 221);
+$color-primary-dark: rgb(2, 179, 179);
+$color-accents: rgb(0, 123, 255);
+$color-accents-sun: rgb(194, 229, 156);
+$color-accents-light: rgb(100, 179, 244);
+$color-text: rgb(94, 110, 130);
+$color-body-bg: rgb(237, 242, 249);
+$color-text-white: white;
+$color-input-border: rgb(216, 226, 239);
+$color-danger: rgb(249, 94, 125);
+
+// Texts Colors ========================================================================================================
+$for-color-classes: (
+        accents: $color-accents,
+        dark-gray: $color-text,
+        primary: $color-primary,
+        primary-light: $color-primary-light
+);
+
+// Text Styles =========================================================================================================
+$for-text-weight: (
+        light: 300,
+        normal: normal,
+        bold: bold,
+        extra-bold: 800,
+        semi-bold: 600,
+        500: 500
+);
+
+// Text Sizes ==========================================================================================================
+$for-text-sizes: (
+        4: 2.0736rem
+);
+
+// Text Decorations ====================================================================================================
+$for-text-decorations: (
+        none: none,
+        underline: underline
+);
+
+// Heading sizes =======================================================================================================
+$for-heading-sizes: (
+        h3: 1.728rem
+);

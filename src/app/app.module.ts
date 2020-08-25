@@ -12,6 +12,11 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { CooperProfileComponent } from './components/cooper-profile/cooper-profile.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { IConfig, NgxMaskModule } from 'ngx-mask';
+
+const maskConfig: Partial<IConfig> = {};
 
 @NgModule( {
     declarations: [
@@ -27,7 +32,10 @@ import { CooperProfileComponent } from './components/cooper-profile/cooper-profi
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        ServiceWorkerModule.register( 'ngsw-worker.js', { enabled: environment.production } )
+        ServiceWorkerModule.register( 'ngsw-worker.js', { enabled: environment.production } ),
+        ReactiveFormsModule,
+        NgxMaskModule.forRoot( maskConfig ),
+        MatButtonModule
     ],
     providers: [],
     bootstrap: [ AppComponent ]
