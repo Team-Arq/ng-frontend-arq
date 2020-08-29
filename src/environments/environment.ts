@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  root_api: 'localhost:8080/'
+  root_api: 'http://localhost/api',
+  endpoints: {
+    get_user: '/users/get-user'
+  }
 };
 
 /*
