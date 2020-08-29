@@ -1,1 +1,49 @@
-<p>user-profile works!</p>
+<body>
+    <div class="user">
+        <h2>User Profile</h2>
+    </div>
+    <div class="container-user">
+        <div class="avatar">
+            <img [src]="url" alt="">
+            <br>
+            <input type="file" (change)="selectFile($event)">
+        </div>
+        <div class="information">
+            <div>
+                <label for="name"><span>Name:</span></label>
+                <label for="username">.....</label>
+            </div>
+            <div>
+                <label for="last name"><span>Last Name:</span></label>
+                <label for="last name">.....</label>
+            </div>
+            <div>
+                <label for="Id"><span>ID:</span></label>
+                <label for="Id-user">.....</label>
+            </div>
+            <div>
+                <label for="email"><span>E-mail:</span></label>
+                <label for="e-mail">.....</label>
+            </div>
+            <div>
+                <label for="phone"><span>Phone:</span></label>
+                <label for="phone">.....</label>
+            </div>
+            <div>
+                <label for="phone extension"><span>Phone extension:</span></label>
+                <label for="phone-ext">.....</label>
+            </div>
+            <div>
+                <label for="birth"><span>Birthdate:</span></label>
+                <label for="brdate">.....</label>
+            </div>
+        </div>
+    </div>
+    <div class="continue">
+        <ul>
+            <li>
+              <a routerLink="/">Regresar</a>
+            </li>
+          </ul>
+    </div>
+</body>

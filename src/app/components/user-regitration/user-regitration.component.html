@@ -1,1 +1,57 @@
 
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="./../../../assets/concierge-bell-solid.svg" alt=""/>
+            <h3 class="title">Cooper</h3>
+            <a routerLink="/account/login" class="text-decoration-none text-white  text-sans-serif ">Login</a>
+        </div>
+        <div class="col-md-9 register-right">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading">Registrate en Cooper</h3>
+                    <div class="row register-form">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Nombres *" value="" required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Apellidos *" value="" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Contraseña *" value="" required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control"  placeholder="Repita La Contraseña *" value="" required/>
+                            </div>
+                            <div class="form-group">
+                                <div class="maxl">
+                                    <label for="Date">Fecha de Nacimiento:</label>
+                                    <input type="date" id="start" name="trip-start"
+                                        value="2020-08-28"
+                                        min="1940-01-01" max="2100-1-1" name="birthdate">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Correo Electronico *" value="" required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" minlength="10" maxlength="15" name="txtPhone" class="form-control" placeholder="Numero Telefonico *" value="" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="number" minlength="8" maxlength="8" name="txtPhoneExt" class="form-control" placeholder="Extensión*" value="" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="number" minlength="4" maxlength="4" name="txtPhonePrefix" class="form-control" placeholder="Numeró Fijo*" value="" required />
+                            </div>
+                            <input type="submit" class="btnRegister"  value="Registrarse"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
