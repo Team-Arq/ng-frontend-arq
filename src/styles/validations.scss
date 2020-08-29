@@ -12,7 +12,7 @@
 .ng-invalid {
 
   // When mouse out
-  .ng-touched {
+  &.ng-touched {
     border-color: $color-danger;
 
     + .validation {
