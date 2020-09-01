@@ -1,49 +1,27 @@
-<body>
-    <div class="user">
-        <h2>User Profile</h2>
-    </div>
-    <div class="container-user">
-        <div class="avatar">
-            <img [src]="url" alt="">
-            <br>
-            <input type="file" (change)="selectFile($event)">
-        </div>
-        <div class="information">
-            <div>
-                <label for="name"><span>Name:</span></label>
-                <label for="username">.....</label>
-            </div>
-            <div>
-                <label for="last name"><span>Last Name:</span></label>
-                <label for="last name">.....</label>
-            </div>
-            <div>
-                <label for="Id"><span>ID:</span></label>
-                <label for="Id-user">.....</label>
-            </div>
-            <div>
-                <label for="email"><span>E-mail:</span></label>
-                <label for="e-mail">.....</label>
-            </div>
-            <div>
-                <label for="phone"><span>Phone:</span></label>
-                <label for="phone">.....</label>
-            </div>
-            <div>
-                <label for="phone extension"><span>Phone extension:</span></label>
-                <label for="phone-ext">.....</label>
-            </div>
-            <div>
-                <label for="birth"><span>Birthdate:</span></label>
-                <label for="brdate">.....</label>
-            </div>
-        </div>
-    </div>
-    <div class="continue">
+<div class="nav-bar">
+    <nav>
         <ul>
             <li>
-              <a routerLink="/">Regresar</a>
+              <a routerLink="/home">Home</a>
             </li>
-          </ul>
+        </ul>
+    </nav>
+</div>
+<div class="container">
+    <div class="fb-profile">
+        <img align="left" class="fb-image-lg " src="https://imagenes.20minutos.es/files/image_656_370/uploads/imagenes/2019/07/23/1014594.jpg" alt="Profile image example"/>
+        <img align="left" class="fb-image-profile thumbnail " src="https://www.caritas.org.mx/wp-content/uploads/2019/02/cualidades-persona-humanitaria.jpg"alt="Profile image example"/>
+        <div class="fb-profile-text">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3>Nombres...</h3>
+                    <h3>Apellidos...</h3>
+                </div>
+                <div class="col-sm-6">
+                    <h3>Identificación...</h3>
+                    <h3>Correo...</h3>
+                </div>
+            </div>
+        </div>
     </div>
-</body>
+</div>
