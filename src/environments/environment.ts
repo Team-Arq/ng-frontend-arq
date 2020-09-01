@@ -7,7 +7,8 @@ export const environment = {
   root_api: 'http://localhost/api',
   endpoints: {
     get_user: '/users/get-user',
-    register_user: '/users/register'
+    register_user: '/users/register',
+    login_user: '/users/login'
   }
 };
 
