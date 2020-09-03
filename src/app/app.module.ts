@@ -16,8 +16,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { HttpClientModule } from '@angular/common/http';
-import { SweetAlert2Module } from "@sweetalert2/ngx-sweetalert2";
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { SpinnerComponent } from './templates/spinner/spinner.component';
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 
 const maskConfig: Partial<IConfig> = {};
 
@@ -41,10 +45,14 @@ const maskConfig: Partial<IConfig> = {};
     ReactiveFormsModule,
     NgxMaskModule.forRoot( maskConfig ),
     MatButtonModule,
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
 } )
 export class AppModule {
+  constructor( private library: FaIconLibrary ) {
+    library.addIconPacks( fas, far, fab );
+  }
 }
