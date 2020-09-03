@@ -1,0 +1,88 @@
+{
+  "configVersion": 1,
+  "timestamp": 1599173962906,
+  "index": "/ng-frontend-arq/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/ng-frontend-arq/favicon.ico",
+        "/ng-frontend-arq/index.html",
+        "/ng-frontend-arq/main.82561d33958a741e87ee.js",
+        "/ng-frontend-arq/manifest.webmanifest",
+        "/ng-frontend-arq/polyfills.a4021de53358bb0fec14.js",
+        "/ng-frontend-arq/runtime.e227d1a0e31cbccbf8ec.js",
+        "/ng-frontend-arq/styles.2013fb16dc6687833da7.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/ng-frontend-arq/assets/concierge-bell-solid.svg",
+        "/ng-frontend-arq/assets/icons/icon-128x128.png",
+        "/ng-frontend-arq/assets/icons/icon-144x144.png",
+        "/ng-frontend-arq/assets/icons/icon-152x152.png",
+        "/ng-frontend-arq/assets/icons/icon-192x192.png",
+        "/ng-frontend-arq/assets/icons/icon-384x384.png",
+        "/ng-frontend-arq/assets/icons/icon-512x512.png",
+        "/ng-frontend-arq/assets/icons/icon-72x72.png",
+        "/ng-frontend-arq/assets/icons/icon-96x96.png",
+        "/ng-frontend-arq/assets/img/arrow-go.svg",
+        "/ng-frontend-arq/assets/img/half-circle.png",
+        "/ng-frontend-arq/assets/user-regular.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/ng-frontend-arq/assets/concierge-bell-solid.svg": "d280d34903b5688fa3b82a570eebf138ab0a5186",
+    "/ng-frontend-arq/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/ng-frontend-arq/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/ng-frontend-arq/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/ng-frontend-arq/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/ng-frontend-arq/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/ng-frontend-arq/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/ng-frontend-arq/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/ng-frontend-arq/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/ng-frontend-arq/assets/img/arrow-go.svg": "bc29ed7417a1f465aadcdb98568ecc096a69ecbf",
+    "/ng-frontend-arq/assets/img/half-circle.png": "bc583ffa2242c44be2b86db2623f23d8ac6849b5",
+    "/ng-frontend-arq/assets/user-regular.svg": "b3fb62f401c20be8aac59e9195ded50721c8285b",
+    "/ng-frontend-arq/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/ng-frontend-arq/index.html": "ba67ced228d4be73d5a8985abf3bfe45bae2a68a",
+    "/ng-frontend-arq/main.82561d33958a741e87ee.js": "81448dd1cb98d9167a7f21369929512e113ed749",
+    "/ng-frontend-arq/manifest.webmanifest": "ba5f2cac585d187aa8e5075c0667f73bbe195338",
+    "/ng-frontend-arq/polyfills.a4021de53358bb0fec14.js": "b47435a9ef2a4829f2f9dfd35599bde3614981b1",
+    "/ng-frontend-arq/runtime.e227d1a0e31cbccbf8ec.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/ng-frontend-arq/styles.2013fb16dc6687833da7.css": "df4c27a2503b8d9fc30d901a6269b7f7a45bd90c"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
