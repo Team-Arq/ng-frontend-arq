@@ -37,20 +37,7 @@ export class UserLoginComponent implements OnInit {
       email: this.loginGroup.get( 'email' ).value,
       password: this.loginGroup.get( 'password' ).value
     } ).subscribe( response => {
-      const t = this;
-
-      Swal.fire( {
-        title: 'Login Exitoso!',
-        text: 'Has ingresado Correctamente en Cooper',
-        icon: 'success',
-        showCancelButton: false,
-        confirmButtonText: 'Entrar',
-        allowOutsideClick: false,
-        preConfirm( inputValue: any ): any {
-          t.router.navigate( [ '', 'account', 'profile' ] );
-          return null;
-        }
-      } );
+      this.router.navigate( [ '', 'account', 'profile' ] );
     }, error => {
       Swal.fire( {
         title: 'Password o contraseña Incorrectos',

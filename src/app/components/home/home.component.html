@@ -1,12 +1,31 @@
-<div id="cooper">
-  <div class="cooper-ltr">
-    <div class="layout-wrapper">
+<div class="home-banner">
+  <div class="banner-bg"></div>
+  <div class="banner-main">
+    <h2>Encuentra la ayuda que necesitas</h2>
+    <p class="description">
+      Cooper es la forma más sencilla de encontrar a la persona correcta para el trabajo correcto
+    </p>
+    <div class="search-main">
+      <form
+        [formGroup]="search"
+        class="search-box"
+        novalidate>
 
-      <div class="sticky-outer-wrapper">
+        <span class="bubble-cat">Ayuda con</span>
 
-      </div>
+        <input type="search"
+               class="search-input"
+               placeholder="microondas / lavadora / iluminacion"
+               title="¿Qué necesitas?">
 
-
+        <button type="submit"
+                class="search-submit"
+                matTooltip="Buscar"
+                matTooltipPosition="before"
+                mat-icon-button>
+          <fa-icon [icon]="['fas', 'search']"></fa-icon>
+        </button>
+      </form>
     </div>
   </div>
 </div>

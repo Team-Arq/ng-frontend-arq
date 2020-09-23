@@ -1,0 +1,104 @@
+<div id="cooper">
+  <div class="cooper-ltr">
+    <div class="layout-wrapper cooper-bg-gray">
+
+      <!-- header context -->
+      <div class="sticky-outer-wrapper">
+        <div class="sticky-inner-wrapper ">
+
+          <!-- mobile header -->
+          <div class="mobile-header">
+
+          </div>
+          <!-- end mobile header -->
+
+          <!-- desktop header -->
+          <header class="desktop-header home">
+
+            <!-- left menu -->
+            <div class="left-menu">
+              <div class="logo">
+                <a [routerLink]="['']">
+                  <span>Cooper</span>
+                </a>
+              </div>
+              <div class="menu">
+                <button class="header-menu" mat-flat-button [matMenuTriggerFor]="headerMenu">
+                  <fa-icon [icon]="['fas', 'layer-group']"></fa-icon>
+                  Categorías
+                </button>
+                <mat-menu #headerMenu="matMenu" xPosition="before">
+                  <button mat-menu-item>
+                    <span class="cooper-menu-icon">
+                      <fa-icon [icon]="['fas', 'plug']"></fa-icon>
+                    </span>
+                    <strong>Electrodomésticos</strong>
+                  </button>
+                  <button mat-menu-item>
+                    <span class="cooper-menu-icon">
+                      <fa-icon [icon]="['fas', 'lightbulb']"></fa-icon>
+                    </span>
+                    <strong>Luces</strong>
+                  </button>
+                  <button mat-menu-item>
+                    <span class="cooper-menu-icon">
+                      <fa-icon [icon]="['fas', 'gamepad']"></fa-icon>
+                    </span>
+                    <strong>Consolas</strong>
+                  </button>
+                  <button mat-menu-item>
+                    <span class="cooper-menu-icon">
+                      <fa-icon [icon]="['fas', 'car']"></fa-icon>
+                    </span>
+                    <strong>Carros</strong>
+                  </button>
+                  <button mat-menu-item>
+                    <span class="cooper-menu-icon">
+                      <fa-icon [icon]="['fas', 'biking']"></fa-icon>
+                    </span>
+                    <strong>Motocicletas</strong>
+                  </button>
+                </mat-menu>
+              </div>
+            </div>
+            <!-- end left menu -->
+
+            <!-- header search -->
+            <div class="search-header">
+
+            </div>
+            <!-- end header search -->
+
+            <!-- right menu -->
+            <div class="right-menu">
+
+              <div class="menu-itm">
+                <a [routerLink]="['', 'explore']">Explorar</a>
+              </div>
+              <div class="menu-itm">
+                <a [routerLink]="['', 'help']">
+                  <fa-icon [icon]="['fas', 'question-circle']"></fa-icon>
+                  Ayuda
+                </a>
+              </div>
+              <button class="join-cooper" [routerLink]="['', 'account', 'login']" mat-button>
+                <fa-icon [icon]="['fas', 'user-circle']"></fa-icon>
+                Ingresar
+              </button>
+            </div>
+            <!-- end right menu -->
+
+          </header>
+          <!-- end desktop header -->
+
+        </div>
+      </div>
+      <!-- end header context -->
+
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+  </div>
+</div>

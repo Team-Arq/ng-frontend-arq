@@ -22,6 +22,9 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatMenuModule } from '@angular/material/menu';
+import { PublicDashboardComponent } from './components/public-dashboard/public-dashboard.component';
 
 const maskConfig: Partial<IConfig> = {};
 
@@ -34,7 +37,8 @@ const maskConfig: Partial<IConfig> = {};
     SearchResultComponent,
     UserProfileComponent,
     CooperProfileComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    PublicDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,9 @@ const maskConfig: Partial<IConfig> = {};
     NgxMaskModule.forRoot( maskConfig ),
     MatButtonModule,
     SweetAlert2Module.forRoot(),
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatTooltipModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
