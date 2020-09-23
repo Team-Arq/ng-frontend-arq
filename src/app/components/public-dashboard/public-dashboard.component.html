@@ -95,8 +95,8 @@
       </div>
       <!-- end header context -->
 
-      <div>
-        <router-outlet></router-outlet>
+      <div [@routerTransition]="getPageTransition(routerOutlet)">
+        <router-outlet #routerOutlet="outlet"></router-outlet>
       </div>
 
     </div>

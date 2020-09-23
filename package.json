@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "cooper": "ng build --prod --base-href=/ng-frontend-arq"
+    "cooper": "ng build --prod --base-href=./"
   },
   "private": true,
   "dependencies": {

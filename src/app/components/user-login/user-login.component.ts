@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class UserLoginComponent implements OnInit {
 
   public loginGroup: FormGroup;
+  public loading = false;
 
   constructor( private builder: FormBuilder, private auth: AuthService, private router: Router ) {
   }
@@ -33,12 +34,17 @@ export class UserLoginComponent implements OnInit {
       this.loginGroup.markAllAsTouched();
       return;
     }
+
+    this.loading = true;
+
     this.auth.loginUser( {
       email: this.loginGroup.get( 'email' ).value,
       password: this.loginGroup.get( 'password' ).value
     } ).subscribe( response => {
       this.router.navigate( [ '', 'account', 'profile' ] );
+      this.loading = false;
     }, error => {
+      this.loading = false;
       Swal.fire( {
         title: 'Password o contraseña Incorrectos',
         text: error.error.message || error.message,

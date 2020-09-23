@@ -42,6 +42,6 @@ export class AppComponent implements AfterViewChecked {
   }
 
   ngAfterViewChecked(): void {
-    console.log( 'Changes detected!' );
+    // console.log( 'Changes detected!' );
   }
 }

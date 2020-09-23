@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  root_api: 'http://localhost/api',
+  root_api: 'https://cooper-v1.herokuapp.com/api',
   endpoints: {
     get_user: '/users/get-user',
     register_user: '/users/register',
