@@ -1,6 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ROUTER_TRANSITION } from '../../include/animations';
+import { SessionService } from '../../services/session.service';
+import { USER_SESSION } from '../../include/constants';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component( {
   selector: 'app-public-dashboard',
@@ -11,11 +14,17 @@ import { ROUTER_TRANSITION } from '../../include/animations';
 } )
 export class PublicDashboardComponent implements OnInit {
   private previousPath = '';
+  public userData;
+  public logged = false;
 
-  constructor() {
+  constructor( private session: SessionService,
+               private snackBar: MatSnackBar ) {
   }
 
   ngOnInit(): void {
+
+    // Check user session
+    this.logged = this.session.exists( USER_SESSION );
   }
 
   public getPageTransition( routerOutlet: RouterOutlet ): any {
@@ -43,7 +52,12 @@ export class PublicDashboardComponent implements OnInit {
     }
   }
 
-  ngAfterViewChecked(): void {
-    // console.log( 'Changes detected!' );
+  public logout(): void {
+    this.session.delete( USER_SESSION );
+    this.logged = false;
+
+    this.snackBar.open( 'Tu sesión ha sido cerrada', 'Aceptar', {
+      duration: 3000
+    } );
   }
 }

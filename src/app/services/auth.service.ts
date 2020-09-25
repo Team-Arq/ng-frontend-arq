@@ -17,7 +17,7 @@ export class AuthService {
     return this.http.post<UserModel>( `${ environment.root_api }${ environment.endpoints.register_user }`, body );
   }
 
-  loginUser( body: { email: string, password: string } ): Observable<LoginModel> {
-    return this.http.post<LoginModel>( `${ environment.root_api }${ environment.endpoints.login_user }`, body );
+  loginUser( body: { email: string, password: string } ): Observable<{ success: string }> {
+    return this.http.post<{ success: string }>( `${ environment.root_api }${ environment.endpoints.login_user }`, body );
   }
 }

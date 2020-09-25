@@ -28,6 +28,7 @@ import { PublicDashboardComponent } from './components/public-dashboard/public-d
 import { CooperDashboardComponent } from './components/cooper-dashboard/cooper-dashboard.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { SupportDashboardComponent } from './components/support-dashboard/support-dashboard.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const maskConfig: Partial<IConfig> = {};
 
@@ -58,7 +59,8 @@ const maskConfig: Partial<IConfig> = {};
     SweetAlert2Module.forRoot(),
     FontAwesomeModule,
     MatTooltipModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ]

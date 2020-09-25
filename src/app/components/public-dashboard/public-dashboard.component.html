@@ -81,10 +81,23 @@
                   Ayuda
                 </a>
               </div>
-              <button class="join-cooper" [routerLink]="['', 'account', 'login']" mat-button>
+              <button class="join-cooper" [routerLink]="['', 'account', 'login']" mat-button *ngIf="!logged">
                 <fa-icon [icon]="['fas', 'user-circle']"></fa-icon>
                 Ingresar
               </button>
+              <button class="user-icon-profile" mat-flat-button [matMenuTriggerFor]="userBadge" *ngIf="logged">
+                U
+              </button>
+              <mat-menu #userBadge="matMenu" xPosition="before">
+                <button mat-menu-item [routerLink]="['', 'account', 'profile']">
+                  <span class="user-badge-icon"><fa-icon [icon]="['fas', 'user']"></fa-icon></span>
+                  Perfil
+                </button>
+                <button class="logout-badge" (click)="logout()" mat-menu-item>
+                  <span class="user-badge-icon"><fa-icon [icon]="['fas', 'running']"></fa-icon></span>
+                  Cerrar sesión
+                </button>
+              </mat-menu>
             </div>
             <!-- end right menu -->
 
