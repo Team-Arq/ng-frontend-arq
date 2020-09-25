@@ -5,6 +5,9 @@ import { UserLoginComponent } from './components/user-login/user-login.component
 import { UserRegitrationComponent } from './components/user-regitration/user-regitration.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { PublicDashboardComponent } from './components/public-dashboard/public-dashboard.component';
+import { CooperDashboardComponent } from './components/cooper-dashboard/cooper-dashboard.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { SupportDashboardComponent } from './components/support-dashboard/support-dashboard.component';
 
 const routes: Routes = [ {
   path: '',
@@ -18,6 +21,18 @@ const routes: Routes = [ {
     component: UserProfileComponent,
     data: { title: 'Cooper - Cuenta de usuario' }
   } ]
+}, {
+  path: 'coop',
+  component: CooperDashboardComponent,
+  children: []
+}, {
+  path: 'admin',
+  component: AdminDashboardComponent,
+  children: []
+}, {
+  path: 'support',
+  component: SupportDashboardComponent,
+  children: []
 }, {
   path: 'account/login',
   component: UserLoginComponent,
