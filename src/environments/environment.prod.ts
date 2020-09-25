@@ -4,6 +4,6 @@ export const environment = {
   endpoints: {
     get_user: '/users/get-user',
     register_user: '/users/register',
-    login_user: '/api/login'
+    login_user: '/login'
   }
 };
