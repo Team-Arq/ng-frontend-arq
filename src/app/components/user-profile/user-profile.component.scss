@@ -1,6 +1,5 @@
 @import "../../../styles/cooper";
 .section {
-    margin-top: 3rem;
     padding: 100px 0;
     position: relative;
 }
@@ -67,7 +66,9 @@ img {
     margin-top: 30px;
   }
 }
-
+section .about-section{
+  margin: 0;
+}
 .about-section .counter {
   padding: 22px 20px;
   background: white;
@@ -79,7 +80,7 @@ img {
 }
 .about-section .counter .count {
   font-weight: 700;
-  color: #20247b;
+  color: rgb(13, 17, 54);
   margin: 0 0 5px;
 }
 .about-section .counter p {
@@ -90,4 +91,20 @@ img {
 
 .dark-color {
     color: rgb(1, 145, 145);
+}
+.container-xl img{
+  margin: 0 45%;
+  margin-top: 10px;
+  width: 5%;
+  height: 5%;
+  -webkit-animation: mover 2s infinite  alternate;
+  animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
+}
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
 }
