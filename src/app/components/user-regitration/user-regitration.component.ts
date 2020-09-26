@@ -4,6 +4,9 @@ import { FormUtils } from '../../include/form.utils';
 import Swal from 'sweetalert2';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { USER_SESSION } from '../../include/constants';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SessionService } from '../../services/session.service';
 
 @Component( {
   selector: 'app-user-regitration',
@@ -15,10 +18,21 @@ export class UserRegitrationComponent implements OnInit {
   public registerGroup: FormGroup;
   public loading = false;
 
-  constructor( private builder: FormBuilder, private auth: AuthService, private router: Router ) {
+  constructor( private builder: FormBuilder,
+               private auth: AuthService,
+               private router: Router,
+               private session: SessionService,
+               private snackBar: MatSnackBar ) {
   }
 
   ngOnInit(): void {
+
+    // Validate if user is in session
+    if ( this.session.exists( USER_SESSION ) ) {
+
+      this.snackBar.open( 'Ya tienes tu cuenta iniciada...', 'Entiendo', { duration: 3000 } );
+      setTimeout( () => this.router.navigate( [ '' ] ), 100 );
+    }
 
     // Setting register form
     this.registerGroup = this.builder.group( {
@@ -85,7 +99,7 @@ export class UserRegitrationComponent implements OnInit {
       this.loading = false;
       Swal.fire( {
         title: 'Lo sentimos',
-        text: error.error.message || error.message,
+        text: error.error.error || error.message,
         icon: 'error',
         showCancelButton: false,
         confirmButtonText: 'Aceptar'
