@@ -88,6 +88,9 @@ section .about-section{
   margin: 0;
 }
 
+.rate{
+  color: orange;
+}
 
 .dark-color {
     color: rgb(1, 145, 145);
@@ -108,3 +111,4 @@ section .about-section{
   0% { transform: translateY(0); }
   100% { transform: translateY(-15px); }
 }
+

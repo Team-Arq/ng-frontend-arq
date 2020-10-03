@@ -1,0 +1,28 @@
+<div class="container rounded bg-white mt-5 mb-5 ">
+    <div class="row">
+        <div class="col-md-8 ">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Editar Perfil</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">Nombre</label><input type="text" class="form-control" placeholder="Nombres" value=""></div>
+                    <div class="col-md-6"><label class="labels">Celular</label><input type="text" class="form-control" placeholder="Celular" value=""></div>
+                    <div class="col-md-6"><label class="labels">Password</label><input type="text" class="form-control" placeholder="Nueva contraseña" value=""></div>
+                    <div class="col-md-6"><label class="labels">Repetir Password</label><input type="text" class="form-control" placeholder="Repetir la Nueva Contraseña" value=""></div>
+                </div>
+                <div class="mt-5 text-center">
+                    <button class="btn btn-primary profile-button" type="button">
+                        <span class="user-badge-icon ">
+                            <fa-icon [icon]="['fas', 'fa-user-edit']" class="user-icon-edit-profile"></fa-icon>
+                        </span>
+                        Guardar Cambios
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 ">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://bootdey.com/img/Content/avatar/avatar7.png"></div>
+        </div>
+    </div>
+</div>

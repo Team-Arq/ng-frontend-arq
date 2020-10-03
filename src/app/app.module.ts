@@ -29,6 +29,7 @@ import { CooperDashboardComponent } from './components/cooper-dashboard/cooper-d
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { SupportDashboardComponent } from './components/support-dashboard/support-dashboard.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 const maskConfig: Partial<IConfig> = {};
 
@@ -45,7 +46,8 @@ const maskConfig: Partial<IConfig> = {};
     PublicDashboardComponent,
     CooperDashboardComponent,
     AdminDashboardComponent,
-    SupportDashboardComponent
+    SupportDashboardComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,

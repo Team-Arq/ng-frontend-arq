@@ -45,16 +45,28 @@
                 </div>
             </div>
         </div>
-        <div class="counter">
+        <div class="counter" *ngIf="cooperhero">
             <div class="row">
-                <div class="col-6 col-lg-6">
+                <div class="col-6 col-lg-3">
                     <div class="count-data text-center media-body">
                         <p class="m-0px font-w-600">Calificación</p>
                     </div>
                 </div>
-                <div class="col-6 col-lg-6">
+                <div class="col-6 col-lg-3">
+                    <span class="fa fa-star fa-2x" [class.rate] = "firstart" ></span>
+                    <span class="fa fa-star fa-2x" [class.rate] = "secondstart" ></span>
+                    <span class="fa fa-star fa-2x" [class.rate] = "thirsdtart" ></span>
+                    <span class="fa fa-star fa-2x" [class.rate] = "fourstart" ></span>
+                    <span class="fa fa-star fa-2x" [class.rate] = "fivestart" ></span>
+                </div>
+                <div class="col-6 col-lg-3">
                     <div class="count-data text-center media-body">
                         <p class="m-0px font-w-600">Trabajos Realizados</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="count-data text-center media-body">
+                        <p class="m-0px font-w-600"></p>
                     </div>
                 </div>
             </div>
