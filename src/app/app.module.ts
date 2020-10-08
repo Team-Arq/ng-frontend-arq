@@ -25,6 +25,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
 import { PublicDashboardComponent } from './components/public-dashboard/public-dashboard.component';
+import { ServiceRegistrationComponent } from './components/service-registration/service-registration.component';
 
 const maskConfig: Partial<IConfig> = {};
 
@@ -38,7 +39,8 @@ const maskConfig: Partial<IConfig> = {};
     UserProfileComponent,
     CooperProfileComponent,
     SpinnerComponent,
-    PublicDashboardComponent
+    PublicDashboardComponent,
+    ServiceRegistrationComponent
   ],
   imports: [
     BrowserModule,
