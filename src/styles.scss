@@ -14,7 +14,6 @@ body {
   font-size: 1rem;
   background-color: rgb(255, 255, 255);
   text-shadow: rgba(0, 0, 0, 0.004) 1px 1px 1px;
-  transition: all 450ms ease 0s;
   color: $color-text;
 }
 
@@ -63,3 +62,5 @@ a, input, button {
 @media (max-width: 767px) {
   @import "styles/mobile";
 }
+
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");

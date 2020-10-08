@@ -195,3 +195,25 @@
     }
   }
 }
+
+.user-icon-profile {
+  border-radius: 50% !important;
+  min-width: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  background-color: $color-primary-dark;
+  color: white;
+}
+
+.user-badge-icon {
+  font-size: 16px;
+  margin-right: .5rem;
+}
+
+.logout-badge {
+  color: $color-danger;
+
+  &:hover {
+    background-color: rgba($color-danger, .1) !important;
+  }
+}

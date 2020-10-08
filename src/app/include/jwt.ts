@@ -34,17 +34,4 @@ export class Jwt {
 
     return JSON.parse( token ) as JwtModel;
   }
-
-  /**
-   * Check if token is valid.
-   * @param token jwt code
-   */
-  public static isValid( token: string ): boolean {
-    if ( token === undefined || token === null || token === '' ) {
-      return false;
-    }
-
-    const data = this.toObject( token );
-    return data.expiration > Date.now() && data.username !== undefined;
-  }
 }
