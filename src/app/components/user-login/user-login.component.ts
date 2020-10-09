@@ -57,7 +57,6 @@ export class UserLoginComponent implements OnInit {
       password: this.loginGroup.get( 'password' ).value
     } ).subscribe( response => {
       this.session.save( USER_SESSION, response.success ); // Start session
-      localStorage.setItem('email', this.loginGroup.get('email').value);
       this.router.navigate( [ '' ] ); // Redirect to landing
       this.loading = false;
     }, error => {

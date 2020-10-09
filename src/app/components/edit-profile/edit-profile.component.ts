@@ -6,6 +6,9 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { SessionService } from '../../services/session.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {Jwt} from '../../include/jwt';
+import { JwtModel } from 'src/app/models/jwt.model';
+import { USER_SESSION } from 'src/app/include/constants';
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
@@ -14,7 +17,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class EditProfileComponent implements OnInit {
   public editGroup: FormGroup;
   public loading = false;
-  public email = localStorage.getItem('email');
+  public userData:JwtModel;
   constructor(private builder: FormBuilder,
               private auth: AuthService,
               private router: Router,
@@ -22,6 +25,7 @@ export class EditProfileComponent implements OnInit {
               private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+  this.userData=Jwt.toObject(this.session.get(USER_SESSION));
   // Setting register form
   this.editGroup = this.builder.group( {
     name: [ { value: '', disabled: false }, [ Validators.required ] ],
@@ -59,7 +63,7 @@ export class EditProfileComponent implements OnInit {
     this.auth.editUser( {
       name: this.editGroup.get( 'name' ).value,
       password: this.editGroup.get( 'password' ).value,
-      email:this.email
+      email:this.userData.usuarioEmail
     } ).subscribe( response => {
       const t = this;
       this.loading = false;

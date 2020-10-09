@@ -19,12 +19,15 @@ export class AuthService {
   loginUser( body: { email: string, password: string } ): Observable<{ success: string }> {
     return this.http.post<{ success: string }>( `${ environment.root_api }${ environment.endpoints.login_user }`, body );
   }
-  logoutUser( body:{email:String}):Observable<{success:String}>{
+  logoutUser( body:{email:string}):Observable<{success:String}>{
     return this.http.post<{ success: string }>(`${ environment.root_api }${ environment.endpoints.logout_user }`,body);
   }
 
-  editUser(body:{name:String, password: string,email:String}):Observable<{success:String}>{
+  editUser(body:{name:string, password: string,email:string}):Observable<{success:String}>{
     return this.http.put<{ success: string }>(`${ environment.root_api }${ environment.endpoints.edit_user }`,body);
+  }
+  getUser(email:string):Observable<any>{
+    return this.http.get<any>(`${ environment.root_api }${ environment.endpoints.get_user }`,{params:{email}});
   }
   
 }
