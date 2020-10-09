@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: [ './user-profile.component.scss' ]
 } )
 export class UserProfileComponent implements OnInit {
-  public cooperhero = true;
+  public cooperhero = false;
   firstart=true;
   secondstart=true;
   thirsdtart=true;
