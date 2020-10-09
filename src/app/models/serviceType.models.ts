@@ -1,5 +1,5 @@
 export class ServiceTypeModel {
-  public id?: number;
+  public idTypeService?: number;
   public nameTypeService: string;
   public description: string;
 }

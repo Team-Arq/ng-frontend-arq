@@ -24,11 +24,11 @@
                         novalidate
                       >
                         <div class="form-group">
-                          <label for="nameService">Nombre Servicio</label>
+                          <label for="name">Nombre Servicio</label>
                           <input
-                            id="nameService"
+                            id="name"
                             type="text"
-                            formControlName="nameService"
+                            formControlName="name"
                             class="form-control"
                           />
                           <div class="validation">
@@ -42,14 +42,10 @@
                               <label for="tipoServicio">Tipo de servicio</label>
                               <select
                                 class="form-control"
-                                id="TipoServicioSelect"
-                                formControlName="TipoServicioSelect"
+                                id="tipoServicio"
+                                formControlName="tipoServicio"
                               >
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                                <option *ngFor="let i of serviceTypes" [value]="i.idTypeService" [innerText]="i.nameTypeService"></option>
                               </select>
                               <div class="validation">
                                 El tipo de servicio es obligatorio.
@@ -66,7 +62,7 @@
                                 <input
                                   id="price"
                                   formControlName="price"
-                                  type="number"
+                                  type="text"
                                   min="1"
                                   maxlength="7"
                                   class="form-control"
@@ -112,11 +108,7 @@
 
                     <!-- right side -->
                     <div class="col-md-5 d-flex flex-center">
-                      <div class="loading" *ngIf="loading">
-                        <cooper-spinner></cooper-spinner>
-                      </div>
-
-                      <div class="p-4 p-md-12 flex-grow-1">
+                                       <div class="p-4 p-md-12 flex-grow-1">
                         <!-- login form -->
 
                         <div class="aligncenter">
