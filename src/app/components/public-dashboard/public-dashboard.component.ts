@@ -4,7 +4,9 @@ import { ROUTER_TRANSITION } from '../../include/animations';
 import { SessionService } from '../../services/session.service';
 import { USER_SESSION } from '../../include/constants';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import Swal from 'sweetalert2';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 @Component( {
   selector: 'app-public-dashboard',
   templateUrl: './public-dashboard.component.html',
@@ -16,9 +18,11 @@ export class PublicDashboardComponent implements OnInit {
   private previousPath = '';
   public userData;
   public logged = false;
-
+  public email='nd@nd.com'
   constructor( private session: SessionService,
-               private snackBar: MatSnackBar ) {
+               private snackBar: MatSnackBar,
+               private auth: AuthService,
+               private router: Router, ) {
   }
 
   ngOnInit(): void {
@@ -30,7 +34,7 @@ export class PublicDashboardComponent implements OnInit {
   public getPageTransition( routerOutlet: RouterOutlet ): any {
     if ( routerOutlet.isActivated ) {
       let transitionName = 'section';
-
+      
       const { path } = routerOutlet.activatedRoute.routeConfig;
       const isSame = this.previousPath === path;
       const isBackward = this.previousPath.startsWith( path );
@@ -54,10 +58,14 @@ export class PublicDashboardComponent implements OnInit {
 
   public logout(): void {
     this.session.delete( USER_SESSION );
-    this.logged = false;
+    this.logged = false
+    this.auth.logoutUser({
+      email:this.email
+    }).subscribe( response => {
+      this.snackBar.open( 'Tu sesión ha sido cerrada', 'Aceptar', {
+        duration: 3000
+    });
 
-    this.snackBar.open( 'Tu sesión ha sido cerrada', 'Aceptar', {
-      duration: 3000
-    } );
-  }
+  });
+}
 }

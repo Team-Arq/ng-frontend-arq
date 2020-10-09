@@ -25,6 +25,10 @@ const routes: Routes = [
         path: 'account/profile',
         component: UserProfileComponent,
         data: { title: 'Cooper - Cuenta de usuario' },
+      },{
+        path: 'account/edit',
+        component: EditProfileComponent,
+        data: { title: 'Editar - Usuario' },
       },
     ],
   },
@@ -34,9 +38,9 @@ const routes: Routes = [
     data: { title: 'Cooper - Ingresar' },
   },
   {
-    path: 'account/register',
-    component: UserRegitrationComponent,
-    data: { title: 'Cooper - Registrate' },
+    path: 'account/edit',
+    component: EditProfileComponent,
+    data: { title: 'Editar Usuario' },
   },
   {
     path: 'service/register',

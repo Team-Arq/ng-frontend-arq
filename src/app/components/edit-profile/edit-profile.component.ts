@@ -14,7 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class EditProfileComponent implements OnInit {
   public editGroup: FormGroup;
   public loading = false;
-  public email='nd@nd.com';
+  public email = localStorage.getItem('email');
   constructor(private builder: FormBuilder,
               private auth: AuthService,
               private router: Router,
