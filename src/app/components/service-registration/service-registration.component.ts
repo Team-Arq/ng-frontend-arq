@@ -4,6 +4,8 @@ import { FormUtils } from '../../include/form.utils';
 import Swal from 'sweetalert2';
 import { ServiceService } from '../../services/service.service';
 import { Router } from '@angular/router';
+import { ServiceTypeModel } from 'src/app/models/serviceType.models';
+
 
 @Component({
   selector: 'app-service-registration',
@@ -11,9 +13,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./service-registration.component.scss'],
 })
 export class ServiceRegistrationComponent implements OnInit {
+
+  //atributos
   public registerService: FormGroup;
   public loading = false;
+  public serviceTypes: ServiceTypeModel[];
 
+  //constructor
   constructor(
     private builder: FormBuilder,
     private service: ServiceService,
@@ -24,13 +30,15 @@ export class ServiceRegistrationComponent implements OnInit {
     // Setting register form
     this.registerService = this.builder.group(
       {
-        nameService: [{ value: '', disabled: false }, [Validators.required]],
+        name: [{ value: '', disabled: false }, [Validators.required]],
         tipoServicio: [{ value: '', disabled: false }, [Validators.required]],
         price: [{ value: '', disabled: false }, [Validators.required]],
         description: [{ value: '', disabled: false }, [Validators.required]],
       },
       [FormUtils.validator]
     );
+
+    this.getTypesService();
   }
 
   public doRegister(): void {
@@ -41,14 +49,12 @@ export class ServiceRegistrationComponent implements OnInit {
     }
 
     this.loading = true;
-
-    console.log(this.registerService.get('nameService').value);
-    /*
+    
     // Do register service
     this.service
       .registerService({
-        nameService: this.registerService.get('nameService').value,
-        typeservice: this.registerService.get('tipoServicio').value,
+        name: this.registerService.get('name').value,
+        typeService: this.registerService.get('tipoServicio').value,
         description: this.registerService.get('description').value,
         price: this.registerService.get('price').value,
       })
@@ -80,6 +86,15 @@ export class ServiceRegistrationComponent implements OnInit {
             confirmButtonText: 'Aceptar',
           });
         }
-      );*/
+      );
   }
+
+  public getTypesService():void{
+this.service.getServiceType().subscribe(
+Response=>{
+  this.serviceTypes=Response.success
+}
+);
+  }
+
 }

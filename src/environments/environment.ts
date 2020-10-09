@@ -7,5 +7,6 @@ export const environment = {
     login_user: '/users/login',
 
     register_service: '/services/create-Service',
+    get_services_types: '/ServiceTypes/get-types-services',
   },
 };
