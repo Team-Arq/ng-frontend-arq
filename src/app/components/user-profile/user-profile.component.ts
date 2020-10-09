@@ -3,6 +3,9 @@ import { USER_SESSION } from 'src/app/include/constants';
 import { SessionService } from '../../services/session.service';
 import {Jwt} from '../../include/jwt';
 import { JwtModel } from 'src/app/models/jwt.model';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 @Component( {
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -16,13 +19,17 @@ export class UserProfileComponent implements OnInit {
   fourstart=true;
   fivestart=false;
   public userData:JwtModel;
-
-  constructor(private session: SessionService) {
+  public data;
+  constructor(private session: SessionService,
+              private auth: AuthService,
+              private router: Router,) {
   }
   
   ngOnInit(): void {
     this.userData=Jwt.toObject(this.session.get(USER_SESSION));
-    this.userData.usuarioEmail
+    this.auth.getUser(this.userData.usuarioEmail).subscribe(response=>{
+      this.data=response.success;
+    });
   }
-
+  
 }

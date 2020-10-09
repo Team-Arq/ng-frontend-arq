@@ -11,30 +11,29 @@
                         <div class="col-md-6">
                             <div class="media">
                                 <label>Nombre</label>
-                                <p></p>
+                                <p>{{data.name}}</p>
                             </div>
                             <div class="media">
                                 <label>Correo</label>
-                                <p></p>
-                            </div>
-                            <div class="media">
-                                <label>Teléfono</label>
-                                <p></p>
+                                <p>{{data.email}}</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="media">
                                 <label>Apellidos</label>
-                                <p></p>
+                                <p>{{data.surname}}</p>
                             </div>
                             <div class="media">
-                                <label>Celular</label>
-                                <p></p>
+                                <label>Usuario creado</label>
+                                <p>{{data.createdAt}}</p>
                             </div>
                             <div class="media">
-                                <label>Extensión</label>
-                                <p></p>
+                                <button mat-menu-item [routerLink]="['', 'account', 'edit']">
+                                    <span class="user-badge-icon"><fa-icon [icon]="['fas', 'user']"></fa-icon></span>
+                                   Editar Perfil
+                                  </button>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
