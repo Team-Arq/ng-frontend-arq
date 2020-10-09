@@ -11,47 +11,56 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { SupportDashboardComponent } from './components/support-dashboard/support-dashboard.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
-const routes: Routes = [
-  {
+const routes: Routes = [ {
+  path: '',
+  component: PublicDashboardComponent,
+  children: [ {
     path: '',
-    component: PublicDashboardComponent,
-    children: [
-      {
-        path: '',
-        component: HomeComponent,
-        data: { title: 'Cooper - El héroe que necesitas' },
-      },
-      {
-        path: 'account/profile',
-        component: UserProfileComponent,
-        data: { title: 'Cooper - Cuenta de usuario' },
-      },
-    ],
-  },
-  {
-    path: 'account/login',
-    component: UserLoginComponent,
-    data: { title: 'Cooper - Ingresar' },
-  },
-  {
-    path: 'account/register',
-    component: UserRegitrationComponent,
-    data: { title: 'Cooper - Registrate' },
-  },
-  {
-    path: 'service/register',
+    component: HomeComponent,
+    data: { title: 'Cooper - El héroe que necesitas' }
+  }, {
+    path: 'account/profile',
+    component: UserProfileComponent,
+    data: { title: 'Cooper - Cuenta de usuario' }
+  }, {
+    path: 'account/edit',
+    component: EditProfileComponent,
+    data: { title: 'Cooper - Editar Usuario' }
+  } ]
+}, {
+  path: 'coop',
+  component: CooperDashboardComponent,
+  children: []
+}, {
+  path: 'admin',
+  component: AdminDashboardComponent,
+  children: [ {
+    path: 'service/registration',
     component: ServiceRegistrationComponent,
-    data: { title: 'Cooper-serviceRegister' },
-  },
+    data: { title: 'Cooper - Registrar nuevo servicio' }
+  } ]
+}, {
+  path: 'support',
+  component: SupportDashboardComponent,
+  children: []
+}, {
+  path: 'account/login',
+  component: UserLoginComponent,
+  data: { title: 'Cooper - Ingresar' }
+}, {
+  path: 'account/register',
+  component: UserRegitrationComponent,
+  data: { title: 'Cooper - Registrate' }
+},
   {
     path: '**',
     redirectTo: '',
-    pathMatch: 'full',
-  },
-];
+    pathMatch: 'full'
+  } ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}
+@NgModule( {
+  imports: [ RouterModule.forRoot( routes ) ],
+  exports: [ RouterModule ]
+} )
+export class AppRoutingModule {
+}

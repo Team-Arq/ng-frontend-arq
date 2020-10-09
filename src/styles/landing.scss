@@ -21,6 +21,10 @@
     box-shadow: none;
   }
 
+  &.admin {
+    display: flex;
+  }
+
   animation: 0.3s ease 0s 1 normal none running daNCtO;
 
   // Menu Left =========================================================================================================
@@ -216,4 +220,12 @@
   &:hover {
     background-color: rgba($color-danger, .1) !important;
   }
+}
+
+.animation-on-enter {
+  transition: all 300ms;
+}
+
+.sticky-header {
+  position: sticky;
 }
