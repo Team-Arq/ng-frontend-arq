@@ -1,1 +1,108 @@
-<router-outlet></router-outlet>
+<div class="white-content">
+  <div class="wrapper">
+
+    <div class="sidebar">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
+    -->
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li routerLinkActive="active">
+            <a [routerLink]="['', 'admin', 'service', 'registration']">
+              <i class="tim-icons icon-chart-pie-36"></i>
+              <p>Registrar nuevo servicio</p>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-panel">
+      <!-- Navbar -->
+      <div class="">
+        <div class="">
+
+          <!-- mobile header -->
+          <div class="mobile-header">
+
+          </div>
+          <!-- end mobile header -->
+
+          <!-- desktop header -->
+          <header class="desktop-header home admin flex-row">
+
+            <!-- left menu -->
+            <div class="left-menu">
+              <div class="logo position-fixed">
+                <a [routerLink]="['', 'admin']">
+                  <span>Administración</span>
+                </a>
+              </div>
+            </div>
+            <!-- end left menu -->
+
+            <!-- header search -->
+            <div class="search-header">
+
+            </div>
+            <!-- end header search -->
+
+            <!-- right menu -->
+            <div class="right-menu">
+
+              <div class="menu-itm">
+                <a [routerLink]="['', 'explore']">Explorar</a>
+              </div>
+              <div class="menu-itm">
+                <a [routerLink]="['', 'help']">
+                  <fa-icon [icon]="['fas', 'question-circle']"></fa-icon>
+                  Ayuda
+                </a>
+              </div>
+              <button class="join-cooper" [routerLink]="['', 'account', 'login']" mat-button *ngIf="!logged">
+                <fa-icon [icon]="['fas', 'user-circle']"></fa-icon>
+                Ingresar
+              </button>
+              <button class="user-icon-profile" mat-flat-button [matMenuTriggerFor]="userBadge" *ngIf="logged">
+                U
+              </button>
+              <mat-menu #userBadge="matMenu" xPosition="before">
+                <button mat-menu-item [routerLink]="['', 'account', 'profile']">
+                  <span class="user-badge-icon"><fa-icon [icon]="['fas', 'user']"></fa-icon></span>
+                  Perfil
+                </button>
+                <button class="logout-badge" (click)="logout()" mat-menu-item>
+                  <span class="user-badge-icon"><fa-icon [icon]="['fas', 'running']"></fa-icon></span>
+                  Cerrar sesión
+                </button>
+              </mat-menu>
+            </div>
+            <!-- end right menu -->
+
+          </header>
+          <!-- end desktop header -->
+
+        </div>
+      </div>
+      <!-- End Navbar -->
+
+
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+
+
+      <footer class="footer">
+        <div class="container-fluid">
+          <div class="copyright">
+            © 2020 made with <i class="tim-icons icon-heart-2"></i> by
+            <a [routerLink]="['']">Cooper</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+  </div>
+
+</div>
