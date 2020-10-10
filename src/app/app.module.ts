@@ -31,6 +31,7 @@ import { SupportDashboardComponent } from './components/support-dashboard/suppor
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { ServiceRegistrationComponent } from './components/service-registration/service-registration.component';
+import { ServiceListAdminComponent } from './components/service-list-admin/service-list-admin.component';
 
 const maskConfig: Partial<IConfig> = {};
 
@@ -49,7 +50,8 @@ const maskConfig: Partial<IConfig> = {};
     CooperDashboardComponent,
     AdminDashboardComponent,
     SupportDashboardComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    ServiceListAdminComponent
   ],
   imports: [
     BrowserModule,
