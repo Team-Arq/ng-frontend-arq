@@ -32,6 +32,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { ServiceRegistrationComponent } from './components/service-registration/service-registration.component';
 import { ServiceListAdminComponent } from './components/service-list-admin/service-list-admin.component';
+import { TypeServiceComponent } from './components/type-service/type-service.component';
 
 const maskConfig: Partial<IConfig> = {};
 
@@ -51,7 +52,8 @@ const maskConfig: Partial<IConfig> = {};
     AdminDashboardComponent,
     SupportDashboardComponent,
     EditProfileComponent,
-    ServiceListAdminComponent
+    ServiceListAdminComponent,
+    TypeServiceComponent
   ],
   imports: [
     BrowserModule,

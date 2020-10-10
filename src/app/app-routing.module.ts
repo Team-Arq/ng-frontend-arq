@@ -11,7 +11,7 @@ import { CooperDashboardComponent } from './components/cooper-dashboard/cooper-d
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { SupportDashboardComponent } from './components/support-dashboard/support-dashboard.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
-
+import { TypeServiceComponent } from './components/type-service/type-service.component';
 const routes: Routes = [ {
   path: '',
   component: PublicDashboardComponent,
@@ -43,7 +43,12 @@ const routes: Routes = [ {
     path: 'service/AdminList',
     component: ServiceListAdminComponent,
     data: { title: 'Cooper - Admin Service' }
-  }],
+  }    
+   ,{
+    path: 'service/type',
+    component: TypeServiceComponent,
+    data: { title: 'Cooper - Registrar un tipo de servicio' }
+  }]
 }, {
   path: 'support',
   component: SupportDashboardComponent,
