@@ -5,6 +5,7 @@ import { UserLoginComponent } from './components/user-login/user-login.component
 import { UserRegitrationComponent } from './components/user-regitration/user-regitration.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ServiceRegistrationComponent } from './components/service-registration/service-registration.component';
+import { ServiceListAdminComponent } from './components/service-list-admin/service-list-admin.component';
 import { PublicDashboardComponent } from './components/public-dashboard/public-dashboard.component';
 import { CooperDashboardComponent } from './components/cooper-dashboard/cooper-dashboard.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
@@ -38,8 +39,12 @@ const routes: Routes = [ {
     path: 'service/registration',
     component: ServiceRegistrationComponent,
     data: { title: 'Cooper - Registrar nuevo servicio' }
-    
-  } ,{
+  }, {
+    path: 'service/AdminList',
+    component: ServiceListAdminComponent,
+    data: { title: 'Cooper - Admin Service' }
+  }    
+   ,{
     path: 'service/type',
     component: TypeServiceComponent,
     data: { title: 'Cooper - Registrar un tipo de servicio' }

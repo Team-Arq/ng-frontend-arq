@@ -11,6 +11,7 @@ import { ServiceTypeModel } from '../models/serviceType.models';
 export class ServiceService {
   constructor(private http: HttpClient) {}
 
+  //services
   registerService(body: {
     name: string;
     typeService: string;
@@ -23,7 +24,12 @@ export class ServiceService {
     );
   }
 
+  getServicesList(): Observable<{success:ServiceModel[]}>{return this.http.get<{success:ServiceModel[]}>(
+    ` ${environment.root_api}${environment.endpoints.get_list_services}`);
+    };
 
+
+//types services
   getServiceType(): Observable<{success:ServiceTypeModel[]}>{return this.http.get<{success:ServiceTypeModel[]}>(
   ` ${environment.root_api}${environment.endpoints.get_services_types}`);
   };
