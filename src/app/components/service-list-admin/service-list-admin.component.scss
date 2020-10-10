@@ -1,0 +1,28 @@
+@import "src/styles/cooper";
+
+.icons-edit-list-services {
+  font-size: 20px;
+  color: $color-accents;
+  margin-right: 50px;
+}
+
+.icons-delete-list-services {
+  font-size: 20px;
+  color: $color-danger-dark;
+}
+
+.icons-div {
+  width: 100px;
+  align-items: center;
+}
+
+.title-type-service {
+  font-family: "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  text-align: center;
+  color: $color-primary-dark-2;
+  font-size: 1.8rem;
+  text-anchor: unset;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

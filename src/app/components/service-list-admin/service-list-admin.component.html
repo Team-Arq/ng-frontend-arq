@@ -1,17 +1,40 @@
 
+<div class="card">
+  <div class="card-body" style="padding: 20px;">
+      <form
+      method="get"
+      [formGroup]="adminService"
+    >
+    <p class="title-type-service">Crea Un Nuevo Servicio</p>
 
+    <table class="table table-striped" style="margin-top: 20px;">
+      <thead>
+        <tr class="table-primary">
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Precio</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let serviceItem of ServiceModels">
+          <th scope="row">{{serviceItem.id}}</th>
+          <td> {{serviceItem.name}}</td>
+          <td>{{serviceItem.typeService}}</td>
+          <td>{{serviceItem.description}}</td>
+          <td>{{serviceItem.price}}</td>
+          <td>
+          <div class=".icons-div" >
+            <span class="icons-edit-list-services"><fa-icon [icon]="['fas', 'edit']"></fa-icon></span>
+            <span class="icons-delete-list-services"><fa-icon [icon]="['fas', 'trash-alt']"></fa-icon></span>
+          </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+  </div>
+</div>
 
-<ul class="list-group">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      Cras justo odio
-      <span class="badge badge-primary badge-pill">14</span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      Dapibus ac facilisis in
-      <span class="badge badge-primary badge-pill">2</span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      Morbi leo risus
-      <span class="badge badge-primary badge-pill">1</span>
-    </li>
-  </ul>

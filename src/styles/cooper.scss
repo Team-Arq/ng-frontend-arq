@@ -15,6 +15,7 @@ $color-body-bg: rgb(247, 247, 247);
 $color-text-white: white;
 $color-input-border: rgb(216, 226, 239);
 $color-danger: rgb(249, 94, 125);
+$color-danger-dark: rgb(204, 44, 44);
 $color-black: rgb(13, 17, 54);
 $color-text-desc-light: rgb(119, 121, 140);
 $color-bg-admin: #f3f7fa;
@@ -25,7 +26,7 @@ $for-color-classes: (
   accents: $color-accents,
   dark-gray: $color-text,
   primary: $color-primary,
-  primary-light: $color-primary-light
+  primary-light: $color-primary-light,
 );
 
 // Text Styles =========================================================================================================
@@ -35,21 +36,21 @@ $for-text-weight: (
   bold: bold,
   extra-bold: 800,
   semi-bold: 600,
-  500: 500
+  500: 500,
 );
 
 // Text Sizes ==========================================================================================================
 $for-text-sizes: (
-  4: 2.0736rem
+  4: 2.0736rem,
 );
 
 // Text Decorations ====================================================================================================
 $for-text-decorations: (
   none: none,
-  underline: underline
+  underline: underline,
 );
 
 // Heading sizes =======================================================================================================
 $for-heading-sizes: (
-  h3: 1.728rem
+  h3: 1.728rem,
 );
