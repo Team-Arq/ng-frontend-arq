@@ -1,0 +1,97 @@
+<main class="main register" id="top">
+    <div class="container-fluid">
+      <div class="row min-vh-100 flex-center no-gutters">
+        <div class="col-lg-10 col-xxl-10 py-3">
+          <!-- Service card -->
+          <div class="card overflow-hidden z-index-1">
+            <div class="card-body p-0">
+              <div class="row no-gutters h-100">
+                <div class="col-md-12 d-flex flex-center position-relative">
+                  <div class="loading" *ngIf="loading">
+                    <cooper-spinner></cooper-spinner>
+                  </div>
+  
+                  <div class="p-4 p-md-8 flex-grow-1">
+                    <p class="center title-type-service">Crea Tipo de Servicio</p>
+                    <!-- left side -->
+                    <div class="row">
+                        <!-- right side -->
+                      <div class="col-md-5 d-flex flex-center">
+                        <div class="p-4 p-md-12 flex-grow-1">
+                            <!-- login form -->
+
+                            <div class="aligncenter">
+                            <img
+                                class="imageCooper"
+                                src="https://previews.123rf.com/images/axsimen/axsimen1707/axsimen170700012/81449088-icono-de-electricista-conjunto-formaci%C3%B3n-y-servicios-t%C3%A9cnicos-un-buen-trabajo-profesi%C3%B3n-manual-e-im%C3%A1genes-de-e.jpg"
+                                alt="logo cooper"
+                            />
+                            </div>
+
+                            <!-- end login form -->
+                        </div>
+                        </div>
+                        <!-- end right side -->
+                      <div class="p-4 p-md-1 flex-grow-1">
+                        <!-- service form -->
+                        <form
+                          (ngSubmit)="doRegister()"
+                          method="post"
+                          [formGroup]="registerService"
+                          novalidate
+                        >
+                        <div class="form-group">
+                            <label for="name">Nombre Servicio</label>
+                            <input
+                              id="name"
+                              type="text"
+                              formControlName="name"
+                              class="form-control"
+                            />
+                            <div class="validation">
+                              El nombre del servicio es obligatorio.
+                            </div>
+                        </div>
+                          <div class="form-group">
+                            <label for="description"
+                              >Descripcion del servicio</label
+                            >
+                            <textarea
+                              class="form-control"
+                              id="description"
+                              formControlName="description"
+                            ></textarea>
+                            <div class="validation">
+                              la descripcion es obligatoria.
+                            </div>
+                          </div>
+  
+                          <div class="form-group row ">
+                            <button
+                              class="p-10 p-md-1 ml-3 flex-grow-1 mr-3 "
+                              type="submit"
+                              mat-flat-button
+                              color="primary"
+                            >
+                              Crear Servicio
+                            </button>
+                          </div>
+                        </form>
+                        <!-- end service form -->
+                      </div>
+  
+                      <!-- end left side -->
+  
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end service card -->
+      </div>
+    </div>
+  </main>
+  
