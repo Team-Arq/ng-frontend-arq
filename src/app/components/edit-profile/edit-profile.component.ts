@@ -90,6 +90,7 @@ export class EditProfileComponent implements OnInit {
         confirmButtonText: 'Aceptar'
       } );
     } );
+   
   }
 
   

@@ -29,6 +29,7 @@ export class UserProfileComponent implements OnInit {
     this.userData=Jwt.toObject(this.session.get(USER_SESSION));
     this.auth.getUser(this.userData.usuarioEmail).subscribe(response=>{
       this.data=response.success;
+      console.log(this.data);
     });
   }
   
