@@ -1,11 +1,6 @@
-
 <div class="card">
   <div class="card-body" style="padding: 20px;">
-      <form
-      method="get"
-      [formGroup]="adminService"
-    >
-    <p class="title-type-service">Crea Un Nuevo Servicio</p>
+    <p class="title-type-service">Administracion de servicios</p>
 
     <table class="table table-striped" style="margin-top: 20px;">
       <thead>
@@ -19,22 +14,26 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let serviceItem of ServiceModels">
-          <th scope="row">{{serviceItem.id}}</th>
+        <tr *ngFor="let serviceItem of serviceModels">
+          <th scope="row"
+          id="id"
+          name='id'
+          >{{serviceItem.id}}</th>
           <td> {{serviceItem.name}}</td>
           <td>{{serviceItem.typeService}}</td>
           <td>{{serviceItem.description}}</td>
           <td>{{serviceItem.price}}</td>
           <td>
           <div class=".icons-div" >
-            <span class="icons-edit-list-services"><fa-icon [icon]="['fas', 'edit']"></fa-icon></span>
-            <span class="icons-delete-list-services"><fa-icon [icon]="['fas', 'trash-alt']"></fa-icon></span>
+            <span class="icons-edit-list-services" (click)=openDialogEdit(serviceItem)
+            ><fa-icon [icon]="['fas', 'edit']"></fa-icon></span>
+
+            <span class="icons-delete-list-services" (click)=deleteService(serviceItem.id)
+            ><fa-icon [icon]="['fas', 'trash-alt']">delete</fa-icon></span>
           </div>
           </td>
         </tr>
       </tbody>
     </table>
-  </form>
-  </div>
 </div>
 

@@ -40,7 +40,7 @@ const routes: Routes = [ {
     component: ServiceRegistrationComponent,
     data: { title: 'Cooper - Registrar nuevo servicio' }
   }, {
-    path: 'service/AdminList',
+    path: 'service/adminlist',
     component: ServiceListAdminComponent,
     data: { title: 'Cooper - Admin Service' }
   }    

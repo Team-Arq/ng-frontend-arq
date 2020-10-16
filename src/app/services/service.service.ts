@@ -5,6 +5,7 @@ import { environment } from '../../environments/environment';
 import { ServiceModel } from '../models/service.model';
 import { ServiceTypeModel } from '../models/serviceType.models';
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -26,6 +27,14 @@ export class ServiceService {
 
   getServicesList(): Observable<{success:ServiceModel[]}>{return this.http.get<{success:ServiceModel[]}>(
     ` ${environment.root_api}${environment.endpoints.get_list_services}`);
+    };
+
+
+
+
+  deleteService(body:{id:number}):Observable<any>{
+    return this.http.delete<any>(
+    `${environment.root_api}${environment.endpoints.delete_services}?idService=${body.id}`);
     };
 
 

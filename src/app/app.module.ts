@@ -33,6 +33,9 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 import { ServiceRegistrationComponent } from './components/service-registration/service-registration.component';
 import { ServiceListAdminComponent } from './components/service-list-admin/service-list-admin.component';
 import { TypeServiceComponent } from './components/type-service/type-service.component';
+import { EditServiceComponent } from './components/service-list-admin/edit-service/edit-service.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 const maskConfig: Partial<IConfig> = {};
 
@@ -53,7 +56,8 @@ const maskConfig: Partial<IConfig> = {};
     SupportDashboardComponent,
     EditProfileComponent,
     ServiceListAdminComponent,
-    TypeServiceComponent
+    TypeServiceComponent,
+    EditServiceComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,6 +73,7 @@ const maskConfig: Partial<IConfig> = {};
     MatTooltipModule,
     MatMenuModule,
     MatSnackBarModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ]
