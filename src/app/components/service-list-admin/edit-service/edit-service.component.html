@@ -1,8 +1,57 @@
-<h2 mat-dialog-title>Edita Tu servicio</h2>
-<mat-dialog-content>This will delete all elements that are currently on this page and cannot be undone.</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close (Click)="onClickEditar">Editar</button>
+
+<div mat-dialog-title class="alert alert-primary" style="height: 35px; padding: 1px;" role="alert">
+  <p class="title-edit"> 
+    <strong>¡Edita  tu servicio!</strong></p>
+</div>
+
+<mat-dialog-content>
+
+<div >
+
+ <form
+ [formGroup]="editServiceform" 
+ (ngSubmit)= "editService()"
+ method="post"
+ >
+
+      <label for="price">Tipo de servicio:</label>
+      <select class="form-control form-control-sm" id="typeService"formControlName="typeService"
+      style="margin-bottom: 10px;">
+        <option *ngFor="let i of serviceTypes" [value]="i.idTypeService" [innerText]="i.nameTypeService"></option>
+      </select>
+
+      <label for="price">Descripcion del servicio</label>
+  
+      <input class="form-control" 
+      id="description" 
+      type="text"
+      formControlName="description"
+      class="form-control">
+
+  <div class="form-group">
+    <label for="price">Precio</label>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+
+        <span class="input-group-text">$</span>
+      </div>
+      <input id="price" type="text" min="1" maxlength="7"class="form-control" aria-label="Amount (to the nearest dollar)"
+      />
+      <div class="validation">
+        El precio es obligatorio.
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions >
+  <div class="col-md-12 text-center">
+  <button class="btn btn-info"  mat-button mat-dialog-close (Click)="onClickEditar">Editar</button>
   <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
-  <button mat-button [mat-dialog-close]="true">Cancelar</button>
+  <button class="btn btn-info"  mat-button [mat-dialog-close]="true">Cancelar</button>
+</div>
 </mat-dialog-actions>
 

@@ -62,8 +62,9 @@ export class ServiceListAdminComponent implements OnInit {
   }
 
 public openDialogEdit(service:ServiceModel){
-  console.log("holaaa");
-const dialogoref = this.dialogo.open(EditServiceComponent,{});
+const dialogoref = this.dialogo.open(EditServiceComponent,{
+  width: '500px'
+});
 dialogoref.afterClosed().subscribe(res=>{
   console.log(res);
 })

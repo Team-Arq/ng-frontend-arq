@@ -8,6 +8,7 @@ export const environment = {
     logout_user:'/users/logout',
     edit_user:'/users/edit-user',
     register_service: '/services/create-Service',
+    edit_service: '/services/edit-service',
     get_list_services:'/services/get-services',
     get_services_types: '/ServiceTypes/get-types-services',
     delete_services:'/services/delete-service',

@@ -25,11 +25,25 @@ export class ServiceService {
     );
   }
 
+ //services
+ editService(body: {
+  idService:number;
+  typeService: string;
+  description: string;
+  price: string;
+}): Observable<ServiceModel> {
+  return this.http.put<ServiceModel>(
+    `${environment.root_api}${environment.endpoints.edit_service}`,
+    body
+  );
+}
+
+
+
+
   getServicesList(): Observable<{success:ServiceModel[]}>{return this.http.get<{success:ServiceModel[]}>(
     ` ${environment.root_api}${environment.endpoints.get_list_services}`);
     };
-
-
 
 
   deleteService(body:{id:number}):Observable<any>{
