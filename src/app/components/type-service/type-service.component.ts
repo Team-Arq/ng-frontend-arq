@@ -4,7 +4,6 @@ import { FormUtils } from '../../include/form.utils';
 import Swal from 'sweetalert2';
 import { ServiceService } from '../../services/service.service';
 import { Router } from '@angular/router';
-import { ServiceTypeModel } from 'src/app/models/serviceType.models';
 @Component({
   selector: 'app-type-service',
   templateUrl: './type-service.component.html',
@@ -13,9 +12,8 @@ import { ServiceTypeModel } from 'src/app/models/serviceType.models';
 export class TypeServiceComponent implements OnInit {
 
   //atributos
-  public registerService: FormGroup;
+  public createTypeService: FormGroup;
   public loading = false;
-  public serviceTypes: ServiceTypeModel[];
 
   //constructor
   constructor(
@@ -26,20 +24,18 @@ export class TypeServiceComponent implements OnInit {
 
   ngOnInit(): void {
     // Setting register form
-    this.registerService = this.builder.group(
+    this.createTypeService = this.builder.group(
       {
         name: [{ value: '', disabled: false }, [Validators.required]],
-        tipoServicio: [{ value: '', disabled: false }, [Validators.required]],
-        price: [{ value: '', disabled: false }, [Validators.required]],
         description: [{ value: '', disabled: false }, [Validators.required]],
       },
       [FormUtils.validator]
     );
   }
-  public doRegister(): void {
+  public doCreate(): void {
     // Validate form
-    if (this.registerService.invalid) {
-      this.registerService.markAllAsTouched();
+    if (this.createTypeService.invalid) {
+      this.createTypeService.markAllAsTouched();
       return;
     }
 
@@ -47,11 +43,9 @@ export class TypeServiceComponent implements OnInit {
     
     // Do register service
     this.service
-      .registerService({
-        name: this.registerService.get('name').value,
-        typeService: this.registerService.get('tipoServicio').value,
-        description: this.registerService.get('description').value,
-        price: this.registerService.get('price').value,
+      .createServiceType({
+        nameTypeService: this.createTypeService.get('name').value,
+        description: this.createTypeService.get('description').value,
       })
       .subscribe(
         (response) => {
@@ -59,14 +53,14 @@ export class TypeServiceComponent implements OnInit {
           this.loading = false;
 
           Swal.fire({
-            title: 'Registro Exitoso',
-            text: 'Has registrado correctamente el servicio.',
+            title: 'Tipo de servicio creado',
+            text: 'Has creado correctamente el tipo servicio.',
             icon: 'success',
             showCancelButton: false,
             confirmButtonText: 'Continuar',
             allowOutsideClick: false,
             preConfirm(inputValue: any): any {
-              t.router.navigate(['', '', '']);
+              t.router.navigate(['','admin','service','registration' ]);
               return null;
             },
           });
@@ -74,7 +68,7 @@ export class TypeServiceComponent implements OnInit {
         (error) => {
           this.loading = false;
           Swal.fire({
-            title: 'Lo sentimos el servicio no fue registrado correctamente',
+            title: 'Lo sentimos ',
             text: error.error.message || error.message,
             icon: 'error',
             showCancelButton: false,

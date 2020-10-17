@@ -42,4 +42,10 @@ export class ServiceService {
   getServiceType(): Observable<{success:ServiceTypeModel[]}>{return this.http.get<{success:ServiceTypeModel[]}>(
   ` ${environment.root_api}${environment.endpoints.get_services_types}`);
   };
+
+  createServiceType( body: { nameTypeService: string, description: string } ): Observable<{ success: string }> {
+    return this.http.post<{ success: string }>( `${ environment.root_api }${ environment.endpoints.create_type_service }`, body );
+  }
+
+
 }

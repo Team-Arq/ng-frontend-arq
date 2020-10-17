@@ -32,15 +32,15 @@
                         </div>
                         </div>
                         <!-- end right side -->
-                      <div class="p-4 p-md-1 flex-grow-1">
+                      <div class="p-4 p-md-1 flex-grow-1 mt-4">
                         <!-- service form -->
                         <form
-                          (ngSubmit)="doRegister()"
+                          (ngSubmit)="doCreate()"
                           method="post"
-                          [formGroup]="registerService"
+                          [formGroup]="createTypeService"
                           novalidate
                         >
-                        <div class="form-group">
+                        <div class="form-group ">
                             <label for="name">Nombre Servicio</label>
                             <input
                               id="name"

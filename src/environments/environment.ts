@@ -11,5 +11,6 @@ export const environment = {
     get_list_services:'/services/get-services',
     get_services_types: '/ServiceTypes/get-types-services',
     delete_services:'/services/delete-service',
+    create_type_service:'/ServiceTypes/create-type-service'
   },
 };
