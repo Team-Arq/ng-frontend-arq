@@ -26,7 +26,7 @@ export class ServiceService {
   }
 
  //services
- editService(body: { idService:number; typeService: string;description: string;price: string;}): Observable<{success:ServiceModel}> {
+ editService(body: { id:number; typeService: string;description: string;price: string;}): Observable<{success:ServiceModel}> {
   return this.http.put<{success:ServiceModel}>(`${environment.root_api}${environment.endpoints.edit_service}`, body);
 }
 
