@@ -1,0 +1,88 @@
+@import "src/styles/cooper";
+
+.services {
+  padding-top: 80px;
+
+  .banner {
+    background-image: url(../../../assets/img/serv-banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-bottom: 2rem;
+    height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .banner-title {
+      background-color: rgba(black, .5);
+      width: 100%;
+      flex-grow: 1;
+      border-radius: 8px;
+      text-align: center;
+      color: white;
+
+      h2 {
+        font-size: 40px;
+        color: white;
+      }
+
+      .desc {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .service-list {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 5rem 2rem 5rem;
+
+    .service-item {
+      box-sizing: content-box;
+      width: 300px;
+      margin-bottom: 1rem;
+      padding: 0 .5rem 0 .5rem;
+
+      .service-card {
+        box-sizing: border-box;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
+        padding: .5rem;
+
+        .service-image {
+          text-align: center;
+          font-size: 50px;
+          color: $color-primary-dark;
+          margin-bottom: 1rem;
+        }
+
+        .service-name {
+          color: $color-primary-dark-2;
+          text-transform: uppercase;
+          font-weight: 600;
+          text-align: center;
+        }
+
+        .service-desc {
+          text-align: justify-all;
+          margin-top: .5rem;
+          font-style: italic;
+        }
+
+        .service-in {
+          margin-top: 1rem;
+
+          button {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<div class="services">
+
+  <div class="banner">
+    <div class="banner-title">
+      <h2>Descubre el servicio que necesitas</h2>
+      <div class="desc">
+        Mira nuestra lista de servicios disponibles, seguramente encontrarás aquello que estabas buscando.
+      </div>
+    </div>
+  </div>
+
+  <div class="service-list" uk-grid
+       uk-scrollspy="cls: uk-animation-fade; target: .service-item; delay: 500; repeat: false">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+    <div *ngFor="let s of theServices" class="service-item">
+      <div class="service-card">
+        <div class="service-image">
+          <fa-icon [icon]="['fas', 'users-cog']"></fa-icon>
+        </div>
+        <div class="service-name" [innerText]="s.name"></div>
+        <div class="service-desc" [innerText]="s.description"></div>
+        <div class="service-in">
+          <button mat-flat-button [routerLink]="[s.id]" color="primary">Pedir servicio</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

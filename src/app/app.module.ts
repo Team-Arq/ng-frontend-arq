@@ -34,7 +34,11 @@ import { ServiceRegistrationComponent } from './components/service-registration/
 import { ServiceListAdminComponent } from './components/service-list-admin/service-list-admin.component';
 import { TypeServiceComponent } from './components/type-service/type-service.component';
 import { EditServiceComponent } from './components/service-list-admin/edit-service/edit-service.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PublicServicesComponent } from './components/public-services/public-services.component';
+import { CommonModule } from '@angular/common';
+import { ServiceDetailsComponent } from './components/service-details/service-details.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 const maskConfig: Partial<IConfig> = {};
@@ -58,9 +62,12 @@ const maskConfig: Partial<IConfig> = {};
     ServiceListAdminComponent,
     TypeServiceComponent,
     EditServiceComponent,
+    PublicServicesComponent,
+    ServiceDetailsComponent,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -74,6 +81,7 @@ const maskConfig: Partial<IConfig> = {};
     MatMenuModule,
     MatSnackBarModule,
     MatDialogModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ]

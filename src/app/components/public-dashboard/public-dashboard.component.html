@@ -23,42 +23,10 @@
                 </a>
               </div>
               <div class="menu">
-                <button class="header-menu" mat-flat-button [matMenuTriggerFor]="headerMenu">
+                <button class="header-menu" mat-flat-button link [routerLink]="['', 'services']">
                   <fa-icon [icon]="['fas', 'layer-group']"></fa-icon>
-                  Categorías
+                  Servicios
                 </button>
-                <mat-menu #headerMenu="matMenu" xPosition="before">
-                  <button mat-menu-item>
-                    <span class="cooper-menu-icon">
-                      <fa-icon [icon]="['fas', 'plug']"></fa-icon>
-                    </span>
-                    <strong>Electrodomésticos</strong>
-                  </button>
-                  <button mat-menu-item>
-                    <span class="cooper-menu-icon">
-                      <fa-icon [icon]="['fas', 'lightbulb']"></fa-icon>
-                    </span>
-                    <strong>Luces</strong>
-                  </button>
-                  <button mat-menu-item>
-                    <span class="cooper-menu-icon">
-                      <fa-icon [icon]="['fas', 'gamepad']"></fa-icon>
-                    </span>
-                    <strong>Consolas</strong>
-                  </button>
-                  <button mat-menu-item>
-                    <span class="cooper-menu-icon">
-                      <fa-icon [icon]="['fas', 'car']"></fa-icon>
-                    </span>
-                    <strong>Carros</strong>
-                  </button>
-                  <button mat-menu-item>
-                    <span class="cooper-menu-icon">
-                      <fa-icon [icon]="['fas', 'biking']"></fa-icon>
-                    </span>
-                    <strong>Motocicletas</strong>
-                  </button>
-                </mat-menu>
               </div>
             </div>
             <!-- end left menu -->
@@ -108,8 +76,8 @@
       </div>
       <!-- end header context -->
 
-      <div [@routerTransition]="getPageTransition(routerOutlet)">
-        <router-outlet #routerOutlet="outlet"></router-outlet>
+      <div>
+        <router-outlet></router-outlet>
       </div>
 
     </div>

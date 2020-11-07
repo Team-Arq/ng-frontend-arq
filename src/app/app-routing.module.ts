@@ -12,6 +12,9 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { SupportDashboardComponent } from './components/support-dashboard/support-dashboard.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { TypeServiceComponent } from './components/type-service/type-service.component';
+import { PublicServicesComponent } from './components/public-services/public-services.component';
+import { ServiceDetailsComponent } from './components/service-details/service-details.component';
+
 const routes: Routes = [ {
   path: '',
   component: PublicDashboardComponent,
@@ -27,6 +30,14 @@ const routes: Routes = [ {
     path: 'account/edit',
     component: EditProfileComponent,
     data: { title: 'Cooper - Editar Usuario' }
+  }, {
+    path: 'services',
+    component: PublicServicesComponent,
+    data: { title: 'Cooper - Servicios' }
+  }, {
+    path: 'services/:id',
+    component: ServiceDetailsComponent,
+    data: { title: 'Cooper - Servicios' }
   } ]
 }, {
   path: 'coop',
@@ -43,12 +54,11 @@ const routes: Routes = [ {
     path: 'service/adminlist',
     component: ServiceListAdminComponent,
     data: { title: 'Cooper - Admin Service' }
-  }    
-   ,{
+  }, {
     path: 'service/type',
     component: TypeServiceComponent,
     data: { title: 'Cooper - Registrar un tipo de servicio' }
-  }]
+  } ]
 }, {
   path: 'support',
   component: SupportDashboardComponent,
@@ -61,12 +71,11 @@ const routes: Routes = [ {
   path: 'account/register',
   component: UserRegitrationComponent,
   data: { title: 'Cooper - Registrate' }
-},
-  {
-    path: '**',
-    redirectTo: '',
-    pathMatch: 'full'
-  } ];
+}, {
+  path: '**',
+  redirectTo: '',
+  pathMatch: 'full'
+} ];
 
 @NgModule( {
   imports: [ RouterModule.forRoot( routes ) ],
