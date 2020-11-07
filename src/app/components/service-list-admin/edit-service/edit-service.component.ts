@@ -5,12 +5,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormUtils } from '../../../include/form.utils';
 import { ServiceService } from '../../../services/service.service';
 import { ServiceTypeModel } from 'src/app/models/serviceType.models';
+import { ServiceModel } from 'src/app/models/service.model';
 
 @Component({
   selector: 'app-edit-service',
   templateUrl: './edit-service.component.html',
   styleUrls: ['./edit-service.component.scss']
 })
+
 export class EditServiceComponent implements OnInit {
 
  //atributos
@@ -23,7 +25,10 @@ export class EditServiceComponent implements OnInit {
     public dialogoEdicion: MatDialogRef<EditServiceComponent>,
     private builder: FormBuilder,
     private service: ServiceService,
+    @Inject(MAT_DIALOG_DATA) public data: ServiceModel
   ) { }
+
+  
 
   ngOnInit(): void {
 
@@ -35,13 +40,15 @@ export class EditServiceComponent implements OnInit {
       },
       [FormUtils.validator]
     );
-
     this.getTypesService();
+
+    console.log(this.data);
 
   }
 
   onClickEditar():void{
-this.dialogoEdicion.close();
+    console.log('asdkasdkasldaskdlskadlaskdlpasmdao´kdnawip');
+      this.dialogoEdicion.close();
   }
 
 
@@ -55,19 +62,23 @@ this.dialogoEdicion.close();
 
 
     public editService(): void {
-      // Validate form
+
+      console.log(this.editServiceform.get('typeService').value);
+      console.log( this.editServiceform.get('description').value);
+   
+     // Validate form
       if (this.editServiceform.invalid) {
         this.editServiceform.markAllAsTouched();
+        console.log('Error');
         return;
       }
   
       this.loading = true;
-      
-      // Do register service
-      this.service
-        .editService({
-          idService:this.editServiceform.get('tipoServicio').value,
-          typeService: this.editServiceform.get('tipoServicio').value,
+
+  
+      this.service.editService({
+          idService:this.data.id,
+          typeService: this.editServiceform.get('typeService').value,
           description: this.editServiceform.get('description').value,
           price: this.editServiceform.get('price').value,
         })
@@ -75,10 +86,13 @@ this.dialogoEdicion.close();
           (response) => {
             const t = this;
             this.loading = false;
+
+            
+      console.log( this.editServiceform.get('description').value);
   
             Swal.fire({
               title: 'Registro Exitoso',
-              text: 'Has erditado correctamente el servicio.',
+              text: 'Has editado correctamente el servicio.',
               icon: 'success',
               showCancelButton: false,
               confirmButtonText: 'Continuar',

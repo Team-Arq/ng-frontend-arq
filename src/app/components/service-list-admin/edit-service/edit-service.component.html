@@ -4,15 +4,22 @@
     <strong>¡Edita  tu servicio!</strong></p>
 </div>
 
+
+<form
+[formGroup]="editServiceform" 
+(ngSubmit)= "editService()"
+method="put"
+>
+
 <mat-dialog-content>
 
 <div >
 
- <form
- [formGroup]="editServiceform" 
- (ngSubmit)= "editService()"
- method="post"
- >
+
+      <label for="name">El servicio seleccionado para la edicion es:</label>
+      <div style="text-align:center; ">
+      <h3>{{data.name}}</h3>
+    </div>
 
       <label for="price">Tipo de servicio:</label>
       <select class="form-control form-control-sm" id="typeService"formControlName="typeService"
@@ -35,23 +42,26 @@
 
         <span class="input-group-text">$</span>
       </div>
-      <input id="price" type="text" min="1" maxlength="7"class="form-control" aria-label="Amount (to the nearest dollar)"
+      <input id="price" 
+      formControlName="price"
+      type="text" min="1"
+       maxlength="7"
+       class="form-control" 
+       aria-label="Amount (to the nearest dollar)"
       />
       <div class="validation">
         El precio es obligatorio.
       </div>
     </div>
   </div>
-</form>
 </div>
-
 </mat-dialog-content>
 
 <mat-dialog-actions >
   <div class="col-md-12 text-center">
-  <button class="btn btn-info"  mat-button mat-dialog-close (Click)="onClickEditar">Editar</button>
+  <button class="btn btn-info"  mat-button type="submit">Editar</button>
   <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
   <button class="btn btn-info"  mat-button [mat-dialog-close]="true">Cancelar</button>
 </div>
 </mat-dialog-actions>
-
+</form>
