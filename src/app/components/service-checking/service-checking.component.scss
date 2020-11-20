@@ -104,7 +104,21 @@
   }
 }
 
-.cost {
-  color: #00f2c3;
-  font-size: 25px;
+.mat-form-field {
+  width: 100%;
+}
+
+.checking {
+  width: 400px;
+}
+
+.amount {
+  text-align: right;
+  font-size: 16px;
+  margin-bottom: 1rem;
+  color: #2dce89;
+}
+
+.card {
+  margin-bottom: 15rem;
 }

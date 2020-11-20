@@ -20,7 +20,7 @@
         <div class="service-name" [innerText]="s.name"></div>
         <div class="service-desc" [innerText]="s.description"></div>
         <div class="service-in">
-          <button mat-flat-button [routerLink]="[s.id]" color="primary">Pedir servicio</button>
+          <button mat-flat-button (click)="selectedService(s)" color="primary">Pedir servicio</button>
         </div>
       </div>
     </div>

@@ -55,7 +55,7 @@ export class EditServiceComponent implements OnInit {
   public getTypesService(): void {
     this.service.getServiceType().subscribe(
       Response => {
-        this.serviceTypes = Response.success
+        this.serviceTypes = Response.success;
       }
     );
   }

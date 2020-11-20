@@ -14,6 +14,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 import { TypeServiceComponent } from './components/type-service/type-service.component';
 import { PublicServicesComponent } from './components/public-services/public-services.component';
 import { ServiceDetailsComponent } from './components/service-details/service-details.component';
+import { ServiceCheckingComponent } from './components/service-checking/service-checking.component';
 
 const routes: Routes = [ {
   path: '',
@@ -38,6 +39,10 @@ const routes: Routes = [ {
     path: 'services/:id',
     component: ServiceDetailsComponent,
     data: { title: 'Cooper - Servicios' }
+  }, {
+    path: 'services/:id/checking',
+    component: ServiceCheckingComponent,
+    data: { title: 'Cooper - Checking' }
   } ]
 }, {
   path: 'coop',

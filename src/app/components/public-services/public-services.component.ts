@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ServiceModel } from '../../models/service.model';
 import { ServicesService } from '../../services/services.service';
+import { Router } from '@angular/router';
 
 @Component( {
   selector: 'app-public-services',
@@ -13,7 +14,7 @@ export class PublicServicesComponent implements OnInit {
   public theServices: ServiceModel[] = [];
   public loading = false;
 
-  constructor( private service: ServicesService, private snackBar: MatSnackBar ) {
+  constructor( private service: ServicesService, private snackBar: MatSnackBar, private roter: Router ) {
   }
 
   ngOnInit(): void {
@@ -32,5 +33,10 @@ export class PublicServicesComponent implements OnInit {
         duration: 3000
       } );
     } );
+  }
+
+  public selectedService( service: ServiceModel ): void {
+    localStorage.setItem( 'service', JSON.stringify( service ) );
+    this.roter.navigate( [ '', 'services', service.id ] );
   }
 }

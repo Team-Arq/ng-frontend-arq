@@ -1,0 +1,55 @@
+<div class="services">
+  <div class="serv-banner">
+    <div class="uk-container uk-container-small">
+      <div class="coop-breadcrumb">
+        <a [routerLink]="">{{service.typeService}}</a> -> {{service.name}} -> checking
+      </div>
+    </div>
+  </div>
+
+  <div class="uk-container uk-container-small uk-margin-medium-top">
+    <div class="card">
+      <div class="card-body">
+
+        <h2>Pago de servicio</h2>
+
+        <form class="checking" [formGroup]="checking" (submit)="paypal()" novalidate>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Día en que necesitas el servicio:</mat-label>
+            <input matInput
+                   [matDatepicker]="picker"
+                   [min]="minDate"
+                   (click)="picker.open()"
+                   (focusin)="picker.open()"
+                   formControlName="date"
+                   autocomplete="off">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Hora aproximada:</mat-label>
+            <input matInput
+                   mask="99:99"
+                   formControlName="hour"
+                   placeholder="08:30"
+                   autocomplete="off">
+          </mat-form-field>
+
+          <div class="range">El servico llegará en un tiempo de una hora a partir de la hora seleccionada.</div>
+
+          <div class="amount">Valor: {{service.price | currency}}</div>
+
+          <div class="text-right">
+            <button type="submit" mat-raised-button [disabled]="checking.invalid" color="primary">
+              <fa-icon [icon]="['fab', 'paypal']"></fa-icon>
+              Reservar con PayPal
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

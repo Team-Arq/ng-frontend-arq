@@ -12,7 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { CooperProfileComponent } from './components/cooper-profile/cooper-profile.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { HttpClientModule } from '@angular/common/http';
@@ -39,6 +39,10 @@ import { PublicServicesComponent } from './components/public-services/public-ser
 import { CommonModule } from '@angular/common';
 import { ServiceDetailsComponent } from './components/service-details/service-details.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { ServiceCheckingComponent } from './components/service-checking/service-checking.component';
 
 
 const maskConfig: Partial<IConfig> = {};
@@ -64,6 +68,7 @@ const maskConfig: Partial<IConfig> = {};
     EditServiceComponent,
     PublicServicesComponent,
     ServiceDetailsComponent,
+    ServiceCheckingComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,6 +87,10 @@ const maskConfig: Partial<IConfig> = {};
     MatSnackBarModule,
     MatDialogModule,
     MatProgressBarModule,
+    FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ]
