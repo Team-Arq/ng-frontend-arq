@@ -15,7 +15,7 @@ import { TypeServiceComponent } from './components/type-service/type-service.com
 import { PublicServicesComponent } from './components/public-services/public-services.component';
 import { ServiceDetailsComponent } from './components/service-details/service-details.component';
 import { ServiceCheckingComponent } from './components/service-checking/service-checking.component';
-
+import { PaymentsComponent } from './components/payments/payments.component';
 const routes: Routes = [ {
   path: '',
   component: PublicDashboardComponent,
@@ -43,6 +43,10 @@ const routes: Routes = [ {
     path: 'services/:id/checking',
     component: ServiceCheckingComponent,
     data: { title: 'Cooper - Checking' }
+  } , {
+    path: 'acount/payments',
+    component: PaymentsComponent,
+    data: { title: 'Cooper - Pagos' }
   } ]
 }, {
   path: 'coop',

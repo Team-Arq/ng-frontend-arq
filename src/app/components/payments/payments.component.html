@@ -1,0 +1,25 @@
+<body>
+<div class="container">
+		<div class="row">
+			<div class="col">
+				<table class="table table-striped table-bordered table-hover table-dark" style="margin-top: 80px;">
+					<thead>
+						<tr>
+                            <th class="text-center">Id del servicio</th>
+							<th class="text-center">Descripción</th>
+							<th class="text-center">Precio</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let payment of paymentModels">
+							<td class="text-center">{{payment.id_service}}</td>
+							<td class="text-center"> {{payment.description}}</td>
+							<td class="text-center">{{payment.price}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+        </div>
+    </div>
+</body>
+

@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  root_api: 'https://cooper-v1.herokuapp.com/api',
+  root_api: 'http://localhost:3000/api',
   endpoints: {
     get_user: '/users/get-user',
     register_user: '/users/register',
@@ -12,6 +12,8 @@ export const environment = {
     get_list_services: '/services/get-services',
     get_services_types: '/ServiceTypes/get-types-services',
     delete_services:'/services/delete-service',
-    create_type_service: '/ServiceTypes/create-type-service'
+    create_type_service: '/ServiceTypes/create-type-service',
+    create_Payment:'/payment/create-payment',
+    get_Payments:'/payment/get-payments'
   },
 };

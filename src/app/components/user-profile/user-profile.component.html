@@ -27,13 +27,6 @@
                                 <label>Usuario creado</label>
                                 <p>{{data.createdAt}}</p>
                             </div>
-                            <div class="media">
-                                <button mat-menu-item [routerLink]="['', 'account', 'edit']">
-                                    <span class="user-badge-icon"><fa-icon [icon]="['fas', 'user']"></fa-icon></span>
-                                   Editar Perfil
-                                  </button>
-                            </div>
-                            
                         </div>
                     </div>
                 </div>
@@ -71,10 +64,10 @@
             </div>
         </div>
         <div >
-            <button mat-raised-button>Editar Perfil</button>
+            <button mat-raised-button [routerLink]="['', 'account', 'edit']">Editar Perfil</button>
         </div>
         <div >
-            <button mat-raised-button>Agregar Medio de Pago</button>
+            <button mat-raised-button [routerLink]="['', 'acount', 'payments']">Historial de pagos</button>
         </div>
     </div>
 </section>

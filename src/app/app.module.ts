@@ -43,6 +43,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { ServiceCheckingComponent } from './components/service-checking/service-checking.component';
+import { PaymentsComponent } from './components/payments/payments.component';
 
 
 const maskConfig: Partial<IConfig> = {};
@@ -69,6 +70,7 @@ const maskConfig: Partial<IConfig> = {};
     PublicServicesComponent,
     ServiceDetailsComponent,
     ServiceCheckingComponent,
+    PaymentsComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { UserModel } from '../models/user.model';
+import {PaymentModel} from '../models/payments.model';
 
 @Injectable( {
   providedIn: 'root'
@@ -29,5 +30,13 @@ export class AuthService {
   getUser(email:string):Observable<any>{
     return this.http.get<any>(`${ environment.root_api }${ environment.endpoints.get_user }`,{params:{email}});
   }
+  createPayment( body: { description: string, price: string, id_user: number, id_service: number } ): Observable<PaymentModel> {
+    return this.http.post<PaymentModel>( `${ environment.root_api }${ environment.endpoints.create_Payment }`, body );
+  }
+
+  getPayment(body:{iduser:number}):Observable<any>{
+    return this.http.get<any>(`${environment.root_api}${environment.endpoints.get_Payments}?iduser=${body.iduser}`);
+  };
+
   
 }
