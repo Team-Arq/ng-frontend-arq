@@ -3,6 +3,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ServiceModel } from '../../models/service.model';
 import { ServicesService } from '../../services/services.service';
 import { Router } from '@angular/router';
+import { UserModel } from '../../models/user.model';
+import { Jwt } from '../../include/jwt';
+import { USER_SESSION } from '../../include/constants';
+import { SessionService } from '../../services/session.service';
 
 @Component( {
   selector: 'app-public-services',
@@ -13,11 +17,17 @@ export class PublicServicesComponent implements OnInit {
 
   public theServices: ServiceModel[] = [];
   public loading = false;
+  public userData: UserModel;
+  public logged = false;
 
-  constructor( private service: ServicesService, private snackBar: MatSnackBar, private roter: Router ) {
+  constructor( private service: ServicesService, private snackBar: MatSnackBar, private roter: Router, private session: SessionService ) {
   }
 
   ngOnInit(): void {
+
+
+    // Check user session
+    this.logged = this.session.exists( USER_SESSION );
 
     this.getServices();
   }

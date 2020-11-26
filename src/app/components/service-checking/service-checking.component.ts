@@ -35,6 +35,15 @@ export class ServiceCheckingComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    // Check user session
+    if ( !this.session.exists( USER_SESSION ) ) {
+      this.snack.open( 'Debes iniciar sesión para iniciar proceso de pago.', 'Aceptar', {
+        duration: 3000
+      } );
+      this.router.navigate( [ '' ] );
+    }
+
     if ( localStorage.getItem( 'service' ) === undefined ) {
       this.router.navigate( [ '', 'services' ] );
     } else {

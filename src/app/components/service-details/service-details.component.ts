@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceModel } from '../../models/service.model';
 import { Router } from '@angular/router';
+import { USER_SESSION } from '../../include/constants';
+import { SessionService } from '../../services/session.service';
 
 @Component( {
   selector: 'app-service-details',
@@ -12,11 +14,15 @@ export class ServiceDetailsComponent implements OnInit {
   public date = '';
   public minDate = new Date();
   public service: ServiceModel;
+  public logged = false;
 
-  constructor( private router: Router ) {
+  constructor( private router: Router, private session: SessionService ) {
   }
 
   ngOnInit(): void {
+    // Check user session
+    this.logged = this.session.exists( USER_SESSION );
+
     if ( localStorage.getItem( 'service' ) === undefined ) {
       this.router.navigate( [ '', 'services' ] );
     } else {

@@ -37,6 +37,7 @@ export class PublicDashboardComponent implements OnInit {
     this.auth.logoutUser( {
       email: this.userData.usuarioEmail
     } ).subscribe( response => {
+      this.router.navigate( [ '' ] );
       this.snackBar.open( 'Tu sesión ha sido cerrada', 'Aceptar', {
         duration: 3000
       } );

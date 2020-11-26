@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { SessionService } from '../../services/session.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { USER_SESSION } from '../../include/constants';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component( {
   selector: 'app-admin-dashboard',
@@ -15,6 +15,7 @@ export class AdminDashboardComponent implements OnInit {
   public logged = false;
 
   constructor( private session: SessionService,
+               private router: Router,
                private snackBar: MatSnackBar ) {
   }
 
@@ -22,6 +23,11 @@ export class AdminDashboardComponent implements OnInit {
 
     // Check user session
     this.logged = this.session.exists( USER_SESSION );
+
+    if ( !this.logged ) {
+      this.snackBar.open( 'Debes ingresar a tu cuenta.', 'Aceptar', { duration: 3000 } );
+      this.router.navigate( [ '' ] );
+    }
   }
 
   public logout(): void {
@@ -31,5 +37,7 @@ export class AdminDashboardComponent implements OnInit {
     this.snackBar.open( 'Tu sesión ha sido cerrada', 'Aceptar', {
       duration: 3000
     } );
+
+    this.router.navigate( [ '' ] );
   }
 }

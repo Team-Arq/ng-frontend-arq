@@ -25,8 +25,13 @@
             </div>
           </div>
           <div class="serv-desc" [innerText]="service.description"></div>
-          <div class="serv-do-request">
+          <div class="serv-do-request" *ngIf="logged">
             <button [routerLink]="['', 'services', service.id, 'checking']" mat-raised-button>
+              SOLICITAR SERVICIO
+            </button>
+          </div>
+          <div class="serv-do-request" *ngIf="!logged">
+            <button [routerLink]="['', 'account', 'login']" mat-raised-button>
               SOLICITAR SERVICIO
             </button>
           </div>
