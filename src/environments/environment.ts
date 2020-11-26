@@ -11,9 +11,11 @@ export const environment = {
     edit_service: '/services/edit-service',
     get_list_services: '/services/get-services',
     get_services_types: '/ServiceTypes/get-types-services',
-    delete_services:'/services/delete-service',
+    delete_services: '/services/delete-service',
     create_type_service: '/ServiceTypes/create-type-service',
-    create_Payment:'/payment/create-payment',
-    get_Payments:'/payment/get-payments'
+    paypal_token: '/paypal/paypal-token',
+    paypal_payout: '/paypal/payout',
+    create_Payment: '/payment/create-payment',
+    get_Payments: '/payment/get-payments'
   },
 };
