@@ -16,6 +16,7 @@ import { PublicServicesComponent } from './components/public-services/public-ser
 import { ServiceDetailsComponent } from './components/service-details/service-details.component';
 import { ServiceCheckingComponent } from './components/service-checking/service-checking.component';
 import { PaymentsComponent } from './components/payments/payments.component';
+
 const routes: Routes = [ {
   path: '',
   component: PublicDashboardComponent,
@@ -36,6 +37,10 @@ const routes: Routes = [ {
     component: PublicServicesComponent,
     data: { title: 'Cooper - Servicios' }
   }, {
+    path: 'services/search/:criteria',
+    component: PublicServicesComponent,
+    data: { title: 'Cooper - Criteria' }
+  }, {
     path: 'services/:id',
     component: ServiceDetailsComponent,
     data: { title: 'Cooper - Servicios' }
@@ -43,7 +48,7 @@ const routes: Routes = [ {
     path: 'services/:id/checking',
     component: ServiceCheckingComponent,
     data: { title: 'Cooper - Checking' }
-  } , {
+  }, {
     path: 'acount/payments',
     component: PaymentsComponent,
     data: { title: 'Cooper - Pagos' }

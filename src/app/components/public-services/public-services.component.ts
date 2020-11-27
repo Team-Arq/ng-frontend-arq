@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ServiceModel } from '../../models/service.model';
 import { ServicesService } from '../../services/services.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserModel } from '../../models/user.model';
 import { Jwt } from '../../include/jwt';
 import { USER_SESSION } from '../../include/constants';
@@ -19,8 +19,11 @@ export class PublicServicesComponent implements OnInit {
   public loading = false;
   public userData: UserModel;
   public logged = false;
+  private criteria: string;
 
-  constructor( private service: ServicesService, private snackBar: MatSnackBar, private roter: Router, private session: SessionService ) {
+  constructor( private service: ServicesService, private snackBar: MatSnackBar, private roter: Router,
+               private session: SessionService, private route: ActivatedRoute ) {
+    this.criteria = this.route.snapshot.params.criteria;
   }
 
   ngOnInit(): void {
@@ -29,7 +32,19 @@ export class PublicServicesComponent implements OnInit {
     // Check user session
     this.logged = this.session.exists( USER_SESSION );
 
-    this.getServices();
+    if ( this.criteria !== undefined ) {
+      this.searchService();
+    } else {
+      this.getServices();
+    }
+  }
+
+  public searchService(): void {
+    this.service.searchService( this.criteria ).subscribe( response => {
+      this.theServices = response.success;
+    }, error => {
+      this.snackBar.open( 'No se encontraron servicios relacionados con tu búsqueda', 'Aceptar', { duration: 3000 } );
+    } );
   }
 
   public getServices(): void {

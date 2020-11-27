@@ -16,6 +16,7 @@ export const environment = {
     paypal_token: '/paypal/paypal-token',
     paypal_payout: '/paypal/payout',
     create_Payment: '/payment/create-payment',
-    get_Payments: '/payment/get-payments'
+    get_Payments: '/payment/get-payments',
+    search_service: '/services/get-service'
   },
 };

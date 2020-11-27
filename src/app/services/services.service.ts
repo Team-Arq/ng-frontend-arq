@@ -15,4 +15,10 @@ export class ServicesService {
   getServicesList(): Observable<{ success: ServiceModel[] }> {
     return this.http.get<{ success: ServiceModel[] }>( `${ environment.root_api }${ environment.endpoints.get_list_services }`, {} );
   }
+
+  searchService( name: string ): Observable<{ success: ServiceModel[] }> {
+    return this.http.get<{ success: ServiceModel[] }>( `${ environment.root_api }${ environment.endpoints.search_service }`, {
+      params: { name }
+    } );
+  }
 }

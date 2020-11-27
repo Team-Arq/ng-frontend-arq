@@ -8,6 +8,7 @@
     <div class="search-main">
       <form
         [formGroup]="search"
+        (submit)="doSearch()"
         class="search-box"
         novalidate>
 
@@ -15,6 +16,7 @@
 
         <input type="search"
                class="search-input"
+               formControlName="criteria"
                placeholder="microondas / lavadora / iluminacion"
                title="¿Qué necesitas?">
 
