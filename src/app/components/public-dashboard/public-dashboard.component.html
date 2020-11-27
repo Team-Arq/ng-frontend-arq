@@ -61,6 +61,10 @@
                   <span class="user-badge-icon"><fa-icon [icon]="['fas', 'user']"></fa-icon></span>
                   Perfil
                 </button>
+                <button mat-menu-item [routerLink]="['', 'admin']">
+                  <span class="user-badge-icon"><fa-icon [icon]="['fas', 'cog']"></fa-icon></span>
+                  Panel de administración
+                </button>
                 <button class="logout-badge" (click)="logout()" mat-menu-item>
                   <span class="user-badge-icon"><fa-icon [icon]="['fas', 'running']"></fa-icon></span>
                   Cerrar sesión
